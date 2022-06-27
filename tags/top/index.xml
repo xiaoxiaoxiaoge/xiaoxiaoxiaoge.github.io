@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>top on Hddata</title>
-    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/top/</link>
+    <link>https://xiaoxiaoxiaoge.github.io/tags/top/</link>
     <description>Recent content in top on Hddata</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 07 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://xiaoxiaoxiaoge.github.io/tags/top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内存指标与内存导致的常见问题</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/post/mem/</link>
       <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/post/mem/</guid>
       <description>内存指标与内存导致的常见问题 解决的问题 了解内存指标； swap的作用； system oom kill； java内存分析； Free命令 命令格式 [iflyweb@b0108011 ~]$ free --help Usage: free [options] Options: -b, --bytes show output in bytes -k, --kilo show output in kilobytes -m, --mega show output in megabytes -g, --giga show output in gigabytes --tera show output in terabytes -h, --human show human-readable output --si use powers of 1000 not 1024 -l, --lohi show detailed low and high memory statistics -t, --total show total for RAM + swap -s N, --seconds N repeat printing every N seconds -c N, --count N repeat printing N times, then exit -w, --wide wide output --help display this help and exit -V, --version output version information and exit For more details see free(1).</description>
     </item>
     
     <item>
       <title>CPU占用高问题的排查</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/post/cpu/</link>
       <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/post/cpu/</guid>
       <description>CPU占用高问题的排查 解决的问题 java进程cpu占用高分析； golang或者其他编程语言cpu占用高分析； 整体思路 通过top查看系统资源消耗； 找到占用cpu资源的tid（线程id）； 找到tid锁对应的堆栈信息； 查找进程 第一行 当前时间，启动时间，登陆用户数量，系统负载 第二行 进程数量，running数量，sleeping数量，stoped数量，zombie数量 第三行 cpu信息，us用户，sy系统，ni改变过优先级，id空闲，wa等待，hi硬中断，si软中断，st，运行在其他虚拟机上任务的cpu时间 第四行 内存信息，total总量，free空闲，used使用，buff/cache缓存 第五行 swap交换分区信息，total总量，free空闲，used使用，buff/cache缓存 第六行 空行 第七行 pid进程号，user用户，pr优先级，ni-Nice值，VIRT虚拟内存，RES物理内存，SHR共享内存，S进程状态，cpu占比，内存占比，cpu时间，命令 显示每个cpu核心 按1可以显示每个cpu核心信息。
 显示详细的启动命令 按c键可以显示详细的命令信息；
 显示排序 默认按照cpu排序，按x键可以高亮显示当前排序的列；

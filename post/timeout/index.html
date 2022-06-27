@@ -23,13 +23,13 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/blackburn.css">
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -51,7 +51,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://xiaoxiaoxiaoge.github.io/img/favicon.ico" type="image/x-icon" />
 
   
   
@@ -70,7 +70,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+  <a class="pure-menu-heading brand" href="https://xiaoxiaoxiaoge.github.io/">Hddata</a>
 
 
   <div class="pure-menu">
@@ -78,19 +78,19 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/"><i class='fa fa-home fa-fw'></i>首页</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
       
         </li>
       
@@ -138,24 +138,24 @@
 <p>dns解析是通过udp 53端口发送请求的，通过上面的命令可以抓取到所有的dns请求。</p>
 <p>ping命令可以触发dns解析。</p>
 <!-- raw HTML omitted -->
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/dns.gif" alt="dns"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/dns.gif" alt="dns"></p>
 <p>可以使用wireshark分析dns解析的耗时情况，响应和请求之间的时间差值即为dns解析的耗时；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/dnsutm.gif" alt="dnsutm"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/dnsutm.gif" alt="dnsutm"></p>
 <h2 id="http请求分析">Http请求分析</h2>
 <p>下图是抓取的一个完整的百度的请求；</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo tcpdump -i en0 host 14.215.177.38 -w baidu.pcapng
 </span></span><span style="display:flex;"><span>curl http://www.baidu.com
-</span></span></code></pre></div><p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/baidu.png" alt="baidu"></p>
+</span></span></code></pre></div><p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/baidu.png" alt="baidu"></p>
 <p>分析说明：</p>
 <h3 id="网络延时">网络延时</h3>
 <p>从客户端发出SYN到收到服务端的ACK耗时为25毫秒，则客户端与服务端的双向网络延时为25ms左右；</p>
 <p>可以通过ping来印证下网络延时情况；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/ping-baidu.png" alt="ping-baidu"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/ping-baidu.png" alt="ping-baidu"></p>
 <h3 id="处理延时">处理延时</h3>
 <p>服务端处理耗时=客户端收到resp时间-客户端发出req时间-网络耗时=0.0642-0.0255-0.0255=13ms</p>
 <h2 id="https请求分析">Https请求分析</h2>
 <p>下图是一个模拟的https请求；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/https.png" alt="https"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/https.png" alt="https"></p>
 <h3 id="网络耗时">网络耗时</h3>
 <p>从客户端发出SYN到收到服务端的ACK耗时为25毫秒，则客户端与服务端的双向网络延时为32ms左右；</p>
 <h3 id="https握手耗时">https握手耗时</h3>
@@ -173,13 +173,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://xiaoxiaoxiaoge.github.io/post/command-proxy/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class=" prev ">
-      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/"></a>
+      <a href="https://xiaoxiaoxiaoge.github.io/post/command-proxy/"></a>
     </nav>
     
   </div>
@@ -190,13 +190,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"></a>
+      <a href="https://xiaoxiaoxiaoge.github.io/post/tls-staticip/"></a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://xiaoxiaoxiaoge.github.io/post/tls-staticip/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -213,8 +213,8 @@
 
 </div>
 </div>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/ui.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/menus.js"></script>
 
 
 

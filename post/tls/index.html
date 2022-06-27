@@ -23,13 +23,13 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/blackburn.css">
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -51,7 +51,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://xiaoxiaoxiaoge.github.io/img/favicon.ico" type="image/x-icon" />
 
   
   
@@ -70,7 +70,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+  <a class="pure-menu-heading brand" href="https://xiaoxiaoxiaoge.github.io/">Hddata</a>
 
 
   <div class="pure-menu">
@@ -78,19 +78,19 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/"><i class='fa fa-home fa-fw'></i>首页</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
       
         </li>
       
@@ -142,7 +142,7 @@
 <p>身份验证：验证身份标识有效性机制；</p>
 <p>完整性：校验消息是否被篡改或伪造；</p>
 <h2 id="tls握手">TLS握手</h2>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/handshake.svg" alt="handshake"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/handshake.svg" alt="handshake"></p>
 <blockquote>
 <p>0 ms TLS在可靠的传输层（TCP）之上运行，这意味着首先必须完成TCP的“三次握手”，即一次完整的往返。</p>
 <p>56 ms TCP连接建立之后，客户端再以纯文本形式发送一些规格说明，比如它所运行的TLS协议的版本、它所支持的加密套件列表，以及它支持或希望使用的另外一些TLS选项。</p>
@@ -169,7 +169,7 @@
 <h3 id="会话标识符">会话标识符</h3>
 <p>最早的“会话标识符”（Session Identifier，RFC 5246）机制是在SSL 2.0中引入的，支持服务器创建32字节的会话标识符，并在上一节我们讨论的完整的TLS协商期间作为其“ServerHello”消息的一部分发送。</p>
 <p>在内部，服务器会为每个客户端保存一个会话ID和协商后的会话参数。相应地，客户端也可以保存会话ID信息，并将该ID包含在后续会话的“ClientHello”消息中，从而告诉服务器自己还记着上次握手协商后的加密套件和密钥呢，这些都可以重用。假设客户端和服务器都可以在自己的缓存中找到共享的会话ID参数，那么就可以进行简短握手。否则，就要重新启动一次全新的会话协商，生成新的会话ID。</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/session-Identifiers.svg" alt="session-Identifiers"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/session-Identifiers.svg" alt="session-Identifiers"></p>
 <h3 id="会话记录单">会话记录单</h3>
 <p>为了解决上述服务器端部署TLS会话缓存的问题，“会话记录单”（Session Ticket，RFC 5077）机制出台了，该机制不用服务器保存每个客户端的会话状态。相反，如果客户端表明其支持会话记录单，则服务器可以在完整TLS握手的最后一次交换中添加一条“新会话记录单”（New Session Ticket）记录，包含只有服务器知道的安全密钥加密过的所有会话数据。</p>
 <p>然后，客户端将这个会话记录单保存起来，在后续会话的ClientHello消息中，可以将其包含在SessionTicket扩展中。这样，所有会话数据只保存在客户端，而由于数据被加密过，且密钥只有服务器知道，因此仍然是安全的。</p>
@@ -184,7 +184,7 @@
 </ul>
 <p>信任是上述交流的关键。公钥加密可以让我们使用发送端的公钥验证消息是否使用了正确的私钥签名，但认可发送端仍然是基于信任。在上述交流中，张三和李四可以当面交换自己的公钥，因为他们互相认识，能够保证不被别人冒名顶替。可以说，他们已经通过之前安全（物理）的握手确认了对方。</p>
 <p>接下来，张三收到王五发来的一条消息。张三从未见过王五，但王五自称是李四的朋友。事实上，为了证明自己是李四的朋友，王五还请李四用李四的私钥签署了自己的公钥，并在消息中附上了签名（图4-4）。此时，张三首先检查王五公钥中李四的签名。他知道李四的公钥，因而可以验证李四确实签署了王五的公钥。由于他信任李四对王五的签名，所以就接受了王五的消息，并对消息进行完整性检查，以确保消息确实来自王五。</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/chain.png" alt="chain"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/chain.png" alt="chain"></p>
 <p>我们的浏览器信任谁：</p>
 <ul>
 <li>
@@ -201,7 +201,7 @@
 </li>
 </ul>
 <h3 id="查看信用链">查看信用链</h3>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/gchain.gif" alt="gchain"></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/gchain.gif" alt="gchain"></p>
 <h2 id="证书的测试">证书的测试</h2>
 <p>最后，要验证和测试你的配置，可以使用Qualys SSL Server Test（https://www.ssllabs.com/ssltest/）等在线服务来扫描你的服务器，以发现常见的配置和安全漏洞。</p>
 <h3 id="openssl命令">openssl命令</h3>
@@ -234,13 +234,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://xiaoxiaoxiaoge.github.io/post/tls-staticip/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class=" prev ">
-      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"></a>
+      <a href="https://xiaoxiaoxiaoge.github.io/post/tls-staticip/"></a>
     </nav>
     
   </div>
@@ -268,8 +268,8 @@
 
 </div>
 </div>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/ui.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/menus.js"></script>
 
 
 

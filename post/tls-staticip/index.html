@@ -23,13 +23,13 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/side-menu.css">
   <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+  <link rel="stylesheet" href="https://xiaoxiaoxiaoge.github.io/css/blackburn.css">
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -51,7 +51,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://xiaoxiaoxiaoge.github.io/img/favicon.ico" type="image/x-icon" />
 
   
   
@@ -70,7 +70,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+  <a class="pure-menu-heading brand" href="https://xiaoxiaoxiaoge.github.io/">Hddata</a>
 
 
   <div class="pure-menu">
@@ -78,19 +78,19 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/"><i class='fa fa-home fa-fw'></i>首页</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+          <a class="pure-menu-link" href="https://xiaoxiaoxiaoge.github.io/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
       
         </li>
       
@@ -196,14 +196,14 @@ IP.2 = 124.243.239.5
 </span></span><span style="display:flex;"><span>sudo tcpdump host 117.132.194.33 and port <span style="color:#ae81ff">10000</span> -w 124.243.239.4-ndefault.pcapng
 </span></span></code></pre></div><h3 id="分析">分析</h3>
 <p>使用wireshark打开发现正常的请求客户端发送的client hello包里面有一个扩展字段用于指定访问的SNI服务器；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/sname.gif" alt=""></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/sname.gif" alt=""></p>
 <p>而异常情况下，却没有该字段，异常情况下返回的证书里面并没有IP信息，猜测这块是导致异常的关键因素；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/error-c.gif" alt=""></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/images/tls/error-c.gif" alt=""></p>
 <h3 id="解决">解决</h3>
 <p>The <code>default_server</code> setting of the <code>listen</code> directive should determine which certificate is sent for a request without SNI set in the handshake. Change the <code>listen</code> directive of the desired default:</p>
 <pre tabindex="0"><code>listen 10000 default_server ssl http2;
 </code></pre><p>配置后可以正常的请求，抓包返回的结果发现返回的证书包含IP信息；</p>
-<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tls/sipo.gif" alt=""></p>
+<p><img src="https://xiaoxiaoxiaoge.github.io/tls/sipo.gif" alt=""></p>
 
   
   
@@ -212,13 +212,13 @@ IP.2 = 124.243.239.5
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://xiaoxiaoxiaoge.github.io/post/timeout/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class=" prev ">
-      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/"></a>
+      <a href="https://xiaoxiaoxiaoge.github.io/post/timeout/"></a>
     </nav>
     
   </div>
@@ -229,13 +229,13 @@ IP.2 = 124.243.239.5
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls/"></a>
+      <a href="https://xiaoxiaoxiaoge.github.io/post/tls/"></a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://xiaoxiaoxiaoge.github.io/post/tls/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -252,8 +252,8 @@ IP.2 = 124.243.239.5
 
 </div>
 </div>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
-<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/ui.js"></script>
+<script src="https://xiaoxiaoxiaoge.github.io/js/menus.js"></script>
 
 
 

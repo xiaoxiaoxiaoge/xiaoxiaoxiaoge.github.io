@@ -2,144 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hddata</title>
-    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/</link>
+    <link>https://xiaoxiaoxiaoge.github.io/tags/</link>
     <description>Recent content in Tags on Hddata</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 08 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://xiaoxiaoxiaoge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/linux/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/linux/</link>
       <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/linux/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/shell/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/shell/</link>
       <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/shell/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zsh</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/zsh/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/zsh/</link>
       <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/zsh/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/zsh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>free</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/free/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/free/</link>
       <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/free/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/free/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gc</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/gc/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/gc/</link>
       <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/gc/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/gc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>top</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/top/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/top/</link>
       <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/top/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/top/</guid>
       <description></description>
     </item>
     
     <item>
       <title>load</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/load/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/load/</link>
       <pubDate>Fri, 06 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/load/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/load/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iostat</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iostat/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/iostat/</link>
       <pubDate>Thu, 05 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iostat/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/iostat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iotop</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iotop/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/iotop/</link>
       <pubDate>Thu, 05 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iotop/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/iotop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sed</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/sed/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/sed/</link>
       <pubDate>Tue, 03 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/sed/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/sed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vi</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/vi/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/vi/</link>
       <pubDate>Tue, 03 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/vi/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/vi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cpu</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/cpu/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/cpu/</link>
       <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/cpu/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/cpu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jstack</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/jstack/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/jstack/</link>
       <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/jstack/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/jstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pstack</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/pstack/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/pstack/</link>
       <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/pstack/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/pstack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awk</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/awk/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/tags/awk/</link>
       <pubDate>Sun, 01 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/awk/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/tags/awk/</guid>
       <description></description>
     </item>
     

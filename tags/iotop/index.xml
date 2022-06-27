@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iotop on Hddata</title>
-    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iotop/</link>
+    <link>https://xiaoxiaoxiaoge.github.io/tags/iotop/</link>
     <description>Recent content in iotop on Hddata</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/iotop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://xiaoxiaoxiaoge.github.io/tags/iotop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>磁盘IO指标分析</title>
-      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</link>
+      <link>https://xiaoxiaoxiaoge.github.io/post/io/</link>
       <pubDate>Thu, 05 Sep 2019 11:18:15 +0800</pubDate>
       
-      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</guid>
+      <guid>https://xiaoxiaoxiaoge.github.io/post/io/</guid>
       <description>磁盘IO指标分析 解决的问题 查看有多少cpu时间被io消耗； 看那个进程占用了io； 查看系统的io状态； 查看有多少cpu时间被io消耗 top命令的cpu详情可以看到cpu的io等待时间；
 查看进程的io消耗 iotop命令可以查看进程的io消耗情况
 查看外设的io状态 iostat可以查看外设的io状态</description>
