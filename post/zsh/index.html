@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="终极 Shell----zsh">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>终极 Shell----zsh &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>终极 Shell----zsh</h1>
+  <h2>终极 Shell----zsh</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>08 Sep 2019, 11:18</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/shell">shell</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/zsh">zsh</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="终极-shell----zsh">终极 Shell&mdash;-zsh</h1>
+<h2 id="解决的问题">解决的问题</h2>
+<blockquote>
+<ol>
+<li>色彩高亮；</li>
+<li>命令提示；</li>
+<li>智能补全；</li>
+<li>智能跳转；</li>
+</ol>
+</blockquote>
+<h2 id="zsh介绍与安装">zsh介绍与安装</h2>
+<p>Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。</p>
+<p>Linux/Unix提供了很多种Shell，为毛要这么多Shell？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/shells
+</span></span></code></pre></div><p>显示如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># List of acceptable shells for chpass(1).</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ftpd will not allow users to connect who are not using</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># one of these shells.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/bin/bash
+</span></span><span style="display:flex;"><span>/bin/csh
+</span></span><span style="display:flex;"><span>/bin/ksh
+</span></span><span style="display:flex;"><span>/bin/sh
+</span></span><span style="display:flex;"><span>/bin/tcsh
+</span></span><span style="display:flex;"><span>/bin/zsh
+</span></span></code></pre></div><p>zsh的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash， 于是他创建了一个名为<code>oh-my-zsh</code>的开源项目，自此，只需要简单的安装配置，小白程序员们都可以用上高档大气上档次，狂拽炫酷吊炸天的<code>oh my zsh</code>。</p>
+<h3 id="安装">安装</h3>
+<p>参考文档-https://github.com/robbyrussell/oh-my-zsh</p>
+<h3 id="插件配置">插件配置</h3>
+<p>编辑用户目录下的.zshrc文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>plugins<span style="color:#f92672">=(</span>adb autojump brew docker extract git go golang helm history httpie kubectl man node npm osx pip sublime svn z zsh-syntax-highlighting zsh-autosuggestions<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="使用说明">使用说明</h2>
+<h3 id="色彩高亮">色彩高亮</h3>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/high-light.png" alt=""></p>
+<blockquote>
+<ol>
+<li>成功的命令是绿色；</li>
+<li>错误的命令是红色；</li>
+<li>会提示上一个命令是否执行成功；</li>
+</ol>
+</blockquote>
+<h3 id="命令提示">命令提示</h3>
+<p>输入命令后，按两次tab可以查看命令支持的所有参数；</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/docker-complete.png" alt="docker-complete"></p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/adb-complete.png" alt="adb-complete"></p>
+<h3 id="智能补全">智能补全</h3>
+<p>下图演示了目录的补齐，命令的补齐</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/command-t4.gif" alt="command-t4"></p>
+<h3 id="智能跳转">智能跳转</h3>
+<p>智能跳转可以使用zsh自带的z命令，或者安装autojump使用j命令，演示见下图；</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/command-t3.gif" alt="command-t3"></p>
+<h3 id="历史命令">历史命令</h3>
+<h4 id="智能提示">智能提示</h4>
+<p>对于输入过的历史命令终端里面直接有提示；</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/command-t2.gif" alt="command-t2"></p>
+<h4 id="快速查找">快速查找</h4>
+<p>敲好命令前缀后，可以使用上下键进行快速的历史命令查找；</p>
+<p>下图中输入adb命令，按上下键可以快速的查找输入过的adb命令，对于一些难记的复杂命令非常好用；</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/zsh/history-1.gif" alt="history-1"></p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/">shell的字符串截取</a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/">内存指标与内存导致的常见问题</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

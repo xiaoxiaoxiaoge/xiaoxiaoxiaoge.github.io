@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title> &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1></h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Jan 0001, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  <h1 id="命令行模式下网络代理的使用">命令行模式下网络代理的使用</h1>
+<p>发现有些同学在浏览器使用网络代理，但对于命令行模式下的网络代理使用不是很了解，这里简单介绍下。</p>
+<h2 id="7层代理使用">7层代理使用</h2>
+<h3 id="http_proxy">http_proxy</h3>
+<h4 id="当前session生效">当前session生效</h4>
+<p><code>export http_proxy=http://proxyAddress:port</code></p>
+<h4 id="当前命令生效">当前命令生效</h4>
+<p><code>http_proxy=http://127.0.0.1:4081 命令 参数</code></p>
+<h4 id="全局生效">全局生效</h4>
+<p>把<code>export http_proxy=http://proxyAddress:port</code>放到profile中</p>
+<h4 id="试验">试验</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  Downloads http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:4081 curl -I http://www.google.com
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>Connection: close
+</span></span><span style="display:flex;"><span>Transfer-Encoding: chunked
+</span></span><span style="display:flex;"><span>Cache-Control: private
+</span></span><span style="display:flex;"><span>Content-Type: text/html; charset<span style="color:#f92672">=</span>ISO-8859-1
+</span></span><span style="display:flex;"><span>Date: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:39:02 GMT
+</span></span><span style="display:flex;"><span>Expires: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:39:02 GMT
+</span></span><span style="display:flex;"><span>P3p: CP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;This is not a P3P policy! See g.co/p3phelp for more info.&#34;</span>
+</span></span><span style="display:flex;"><span>Server: gws
+</span></span><span style="display:flex;"><span>Set-Cookie: 1P_JAR<span style="color:#f92672">=</span>2021-01-13-02; expires<span style="color:#f92672">=</span>Fri, 12-Feb-2021 02:39:02 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; Secure
+</span></span><span style="display:flex;"><span>Set-Cookie: NID<span style="color:#f92672">=</span>207<span style="color:#f92672">=</span>dhIjAHt-X2dTXSH43aFe64BNhg-WYoPi34iLVyYwSer2scPdqL44akO2EXLp1c2pCXc9Aagtd1-DLevnNSPEBaaxtTGkugc2q0jIwCweCGd_gLoI8bqw94Amfzf7YPiB44FrPLu_0aq8LIqDhxOKdJGFA8kW5hVLvE2YhoIgl9Q; expires<span style="color:#f92672">=</span>Thu, 15-Jul-2021 02:39:02 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; HttpOnly
+</span></span><span style="display:flex;"><span>X-Frame-Options: SAMEORIGIN
+</span></span><span style="display:flex;"><span>X-Xss-Protection: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜  Downloads curl -I http://www.google.com
+</span></span><span style="display:flex;"><span>^C
+</span></span></code></pre></div><p><strong>可以看到使用代理可以访问G，不使用不能</strong></p>
+<h3 id="https_proxy">https_proxy</h3>
+<h4 id="当前session生效-1">当前session生效</h4>
+<p><code>export https_proxy=http[s]://proxyAddress:port</code></p>
+<h4 id="当前命令生效-1">当前命令生效</h4>
+<p><code>https_proxy=http[s]://127.0.0.1:4081 命令 参数</code></p>
+<h4 id="全局生效-1">全局生效</h4>
+<p>把<code>export https_proxy=http[s]://proxyAddress:port</code>放到profile中</p>
+<h4 id="试验-1">试验</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  Downloads https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:4081 curl -I https://www.google.com
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> Connection established
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/2 <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>content-type: text/html; charset<span style="color:#f92672">=</span>ISO-8859-1
+</span></span><span style="display:flex;"><span>p3p: CP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;This is not a P3P policy! See g.co/p3phelp for more info.&#34;</span>
+</span></span><span style="display:flex;"><span>date: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:44:01 GMT
+</span></span><span style="display:flex;"><span>server: gws
+</span></span><span style="display:flex;"><span>x-xss-protection: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>x-frame-options: SAMEORIGIN
+</span></span><span style="display:flex;"><span>expires: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:44:01 GMT
+</span></span><span style="display:flex;"><span>cache-control: private
+</span></span><span style="display:flex;"><span>set-cookie: 1P_JAR<span style="color:#f92672">=</span>2021-01-13-02; expires<span style="color:#f92672">=</span>Fri, 12-Feb-2021 02:44:01 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; Secure
+</span></span><span style="display:flex;"><span>set-cookie: NID<span style="color:#f92672">=</span>207<span style="color:#f92672">=</span>MlNCq21mjS0YDWl-s3_xEgCj1enJeHGgYeRIoeJD5j8iOFbj7slQ7C21em8sMvLKai9zVL3wW1XfRESUnK11BUAPqIaNS6KB_Uh86_aRVmwQ38MKbxno3UwyGA4PP0jIe9u7Plp6b3UvR6hf74kthXkO7IuAiezjhInAvo9TEnE; expires<span style="color:#f92672">=</span>Thu, 15-Jul-2021 02:44:01 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; HttpOnly
+</span></span><span style="display:flex;"><span>alt-svc: h3-29<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-T051<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q050<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q046<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q043<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,quic<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000; v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;46,43&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜  Downloads curl -I https://www.google.com
+</span></span><span style="display:flex;"><span>^C
+</span></span></code></pre></div><p><strong>可以看到使用代理可以访问G，不使用不能</strong></p>
+<h3 id="all_proxy">all_proxy</h3>
+<h4 id="当前session生效-2">当前session生效</h4>
+<p><code>export all_proxy=http://proxyAddress:port</code></p>
+<h4 id="当前命令生效-2">当前命令生效</h4>
+<p><code>all_proxy=http://127.0.0.1:4081 命令 参数</code></p>
+<h4 id="全局生效-2">全局生效</h4>
+<p>把<code>export all_proxy=http://proxyAddress:port</code>放到profile中</p>
+<h4 id="试验-2">试验</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  Downloads all_proxy<span style="color:#f92672">=</span>socks5://127.0.0.1:4080 curl -I https://www.google.com
+</span></span><span style="display:flex;"><span>HTTP/2 <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>content-type: text/html; charset<span style="color:#f92672">=</span>ISO-8859-1
+</span></span><span style="display:flex;"><span>p3p: CP<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;This is not a P3P policy! See g.co/p3phelp for more info.&#34;</span>
+</span></span><span style="display:flex;"><span>date: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:49:03 GMT
+</span></span><span style="display:flex;"><span>server: gws
+</span></span><span style="display:flex;"><span>x-xss-protection: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>x-frame-options: SAMEORIGIN
+</span></span><span style="display:flex;"><span>expires: Wed, <span style="color:#ae81ff">13</span> Jan <span style="color:#ae81ff">2021</span> 02:49:03 GMT
+</span></span><span style="display:flex;"><span>cache-control: private
+</span></span><span style="display:flex;"><span>set-cookie: 1P_JAR<span style="color:#f92672">=</span>2021-01-13-02; expires<span style="color:#f92672">=</span>Fri, 12-Feb-2021 02:49:03 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; Secure
+</span></span><span style="display:flex;"><span>set-cookie: NID<span style="color:#f92672">=</span>207<span style="color:#f92672">=</span>ADcoTDgwEFNBLb_Vy9pYafNChMI91djmm3ZibWzIWwmxmDAzdFXEJyOBQWuQW0BktvOm6ar5keru47ieR4cVboH8YQJEPXKSFY_7kGyHlpyrLbpNgVCAdYkGXzl9fR8A_UsF59-E9e1PrmKBGKJeCyG7fGSiYC1Ru_TkIuQvxLE; expires<span style="color:#f92672">=</span>Thu, 15-Jul-2021 02:49:03 GMT; path<span style="color:#f92672">=</span>/; domain<span style="color:#f92672">=</span>.google.com; HttpOnly
+</span></span><span style="display:flex;"><span>alt-svc: h3-29<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-T051<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q050<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q046<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,h3-Q043<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000,quic<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:443&#34;</span>; ma<span style="color:#f92672">=</span>2592000; v<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;46,43&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>➜  Downloads curl -I https://www.google.com
+</span></span></code></pre></div><p><strong>可以看到使用代理可以访问G，不使用不能</strong></p>
+<h3 id="no_proxy">no_proxy</h3>
+<p>比较简单，不再介绍。</p>
+<h3 id="ftp_proxy">ftp_proxy</h3>
+<p>没有试验环境，使用比较类似，不再介绍。</p>
+<h2 id="4层tcp代理使用">4层tcp代理使用</h2>
+<p>是不是我们使用7层网络代理就能解决常见的问题了呢，遗憾的发现并不是这样，举一个例子。</p>
+<p>你需要通过运维开通的socks代理获取现网日志时。</p>
+<pre tabindex="0"><code>http_proxy=socks5://172.22.97.17:10000 wget http://172.22.97.17/logs/MicroService/ist4iflypri/see.loa
+解析代理服务器 URL socks5://172.22.97.17:10000 时发生错误：不支持的协议类型 “socks5”。
+</code></pre><p>每个工具对于代理的支持情况不同，会导致以上的问题，那有没有一种4层网络代理工具，可以代理一切的tcp请求呢？</p>
+<p>这里介绍下proxychains，类似的工具很多，比如tsocks等。</p>
+<h3 id="安装">安装</h3>
+<p><a href="https://github.com/haad/proxychains#installation">https://github.com/haad/proxychains#installation</a></p>
+<h3 id="配置">配置</h3>
+<p>在配置文件<code>/usr/local/homebrew/etc/proxychains.conf</code>的最后一行配置以下内容</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">socks5  172.16.82.181 10000
+</code></pre><h3 id="使用">使用</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  Downloads wget http://172.22.97.17/logs/MicroService/ist4iflypri/see.log
+</span></span><span style="display:flex;"><span>--2021-01-13 10:58:56--  http://172.22.97.17/logs/MicroService/ist4iflypri/see.log
+</span></span><span style="display:flex;"><span>正在连接 172.22.97.17:80...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>^C
+</span></span><span style="display:flex;"><span>➜  Downloads proxychains4 wget http://172.22.97.17/logs/MicroService/ist4iflypri/see.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> config file found: /usr/local/homebrew/etc/proxychains.conf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> preloading /usr/local/homebrew/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> DLL init: proxychains-ng 4.14
+</span></span><span style="display:flex;"><span>--2021-01-13 10:59:09--  http://172.22.97.17/logs/MicroService/ist4iflypri/see.log
+</span></span><span style="display:flex;"><span>正在连接 172.22.97.17:80... <span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> Strict chain  ...  172.16.82.181:10000  ...  172.22.97.17:80  ...  OK
+</span></span><span style="display:flex;"><span>已连接。
+</span></span><span style="display:flex;"><span>已发出 HTTP 请求，正在等待回应... <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>长度：98756052 <span style="color:#f92672">(</span>94M<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>text/plain<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>正在保存至: “see.log”
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>see.log                                                         100%<span style="color:#f92672">[=====================================================================================================================================================</span>&gt;<span style="color:#f92672">]</span>  94.18M  5.43MB/s  用时 15s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2021-01-13 10:59:24 <span style="color:#f92672">(</span>6.33 MB/s<span style="color:#f92672">)</span> - 已保存 “see.log” <span style="color:#f92672">[</span>98756052/98756052<span style="color:#f92672">])</span>
+</span></span></code></pre></div><h3 id="危险区--务碰">危险区&ndash;务碰</h3>
+<p>由于proxychains可以代理tcp请求，理论上可以发生下面的情况。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  Downloads proxychains4 telnet 172.22.97.17 <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> config file found: /usr/local/homebrew/etc/proxychains.conf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> preloading /usr/local/homebrew/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> DLL init: proxychains-ng 4.14
+</span></span><span style="display:flex;"><span>Trying 172.22.97.17...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>proxychains<span style="color:#f92672">]</span> Strict chain  ...  172.16.82.181:10000  ...  172.22.97.17:22  ...  OK
+</span></span><span style="display:flex;"><span>Connected to 172.22.97.17.
+</span></span><span style="display:flex;"><span>Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+</span></span><span style="display:flex;"><span>SSH-2.0-OpenSSH_7.4
+</span></span></code></pre></div><p>在你知道密码的情况下，甚至可以登录现网服务器，需要大家使用的时候格外小心。</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/">awk的使用</a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/"></a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

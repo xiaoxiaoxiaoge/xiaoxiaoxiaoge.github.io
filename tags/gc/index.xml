@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gc on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/gc/</link>
+    <description>Recent content in gc on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 07 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/gc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内存指标与内存导致的常见问题</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</link>
+      <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</guid>
+      <description>内存指标与内存导致的常见问题 解决的问题 了解内存指标； swap的作用； system oom kill； java内存分析； Free命令 命令格式 [iflyweb@b0108011 ~]$ free --help Usage: free [options] Options: -b, --bytes show output in bytes -k, --kilo show output in kilobytes -m, --mega show output in megabytes -g, --giga show output in gigabytes --tera show output in terabytes -h, --human show human-readable output --si use powers of 1000 not 1024 -l, --lohi show detailed low and high memory statistics -t, --total show total for RAM + swap -s N, --seconds N repeat printing every N seconds -c N, --count N repeat printing N times, then exit -w, --wide wide output --help display this help and exit -V, --version output version information and exit For more details see free(1).</description>
+    </item>
+    
+  </channel>
+</rss>

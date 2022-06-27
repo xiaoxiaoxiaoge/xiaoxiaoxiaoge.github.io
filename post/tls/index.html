@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title> &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1></h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Jan 0001, 00:00</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  <h1 id="tls原理与实战">TLS原理与实战</h1>
+<p><strong>目标</strong></p>
+<blockquote>
+<ol>
+<li>理解TLS的原理；</li>
+<li>知道TLS体系下的常见概念；</li>
+<li>理解证书相关的概念；</li>
+<li>能够解决常见的证书安全性问题；</li>
+</ol>
+</blockquote>
+<h2 id="tls的作用">TLS的作用</h2>
+<p>加密：可以混淆数据，防止请求被监听；</p>
+<p>身份验证：验证身份标识有效性机制；</p>
+<p>完整性：校验消息是否被篡改或伪造；</p>
+<h2 id="tls握手">TLS握手</h2>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/handshake.svg" alt="handshake"></p>
+<blockquote>
+<p>0 ms TLS在可靠的传输层（TCP）之上运行，这意味着首先必须完成TCP的“三次握手”，即一次完整的往返。</p>
+<p>56 ms TCP连接建立之后，客户端再以纯文本形式发送一些规格说明，比如它所运行的TLS协议的版本、它所支持的加密套件列表，以及它支持或希望使用的另外一些TLS选项。</p>
+<p>84 ms 然后，服务器取得TLS协议版本以备将来通信使用，从客户端提供的加密套件列表中选择一个，再附上自己的证书，将响应发送回客户端。作为可选项，服务器也可以发送一个请求，要求客户端提供证书以及其他TLS扩展参数。</p>
+<p>112 ms 假设两端经过协商确定了共同的版本和加密套件，客户端也高高兴兴地把自己的证书提供给了服务器。然后，客户端会生成一个新的对称密钥，用服务器的公钥来加密，加密后发送给服务器，告诉服务器可以开始加密通信了。到目前为止，除了用服务器公钥加密的新对称密钥之外，所有数据都以明文形式发送。</p>
+<p>140 ms 最后，服务器解密出客户端发来的对称密钥，通过验证消息的MAC检测消息完整性，再返回给客户端一个加密的“Finished”消息。</p>
+<p>168 ms 客户端用它之前生成的对称密钥解密这条消息，验证MAC，如果一切顺利，则建立信道并开始发送应用数据。</p>
+</blockquote>
+<h3 id="alpn">ALPN</h3>
+<p>假设请求一个服务<code>a.example.com:5000</code>，作为HTTPS会话，当然可以利用HTTP的Upgrade机制来协商，但这会导致一次额外的往返，造成延迟。那在TLS握手的同时协商确定协议可行吗？</p>
+<p>应用层协商协议，让我们能在TLS握手的同时协商应用协议（图4-2），从而省掉了HTTP的Upgrade机制所需的额外往返时间。具体来说，整个过程分如下几步：</p>
+<blockquote>
+<ul>
+<li>客户端在ClientHello消息中追加一个新的ProtocolNameList字段，包含自己支持的应用协议；</li>
+<li>服务器检查ProtocolNameList字段，并在ServerHello消息中以ProtocolName字段返回选中的协议。</li>
+</ul>
+</blockquote>
+<h3 id="sni">SNI</h3>
+<p>网络上可以建立TCP连接的任意两端都可以建立加密TLS信道，客户端只需知道另一端的IP地址即可建立连接并进行TLS握手。然而，如果服务器想在一个IP地址为多个站点提供服务，而每个站点都拥有自己的TLS证书，那怎么办？这问题看似有点怪，但其实一点都不怪。</p>
+<p>为了解决这个问题，SNI（Server Name Indication，服务器名称指示）扩展被引入TLS协议，该扩展允许客户端在握手之初就指明要连接的主机名。Web服务器可以检查SNI主机名，选择适当的证书，继续完成握手。</p>
+<p>遗憾的是，很多旧版本的客户端（Windows XP上的大多数IE、Android 2.2等平台上的浏览器）都不支持SNI。如果你想与这些旧版本的客户端进行TLS通信，就得为每个主机准备一个专用IP地址。</p>
+<h2 id="tls会话恢复">TLS会话恢复</h2>
+<p>完整TLS握手会带来额外的延迟和计算量，从而给所有依赖安全通信的应用造成严重的性能损失。为了挽回某些损失，TLS提供了恢复功能，即在多个连接间共享协商后的安全密钥。</p>
+<h3 id="会话标识符">会话标识符</h3>
+<p>最早的“会话标识符”（Session Identifier，RFC 5246）机制是在SSL 2.0中引入的，支持服务器创建32字节的会话标识符，并在上一节我们讨论的完整的TLS协商期间作为其“ServerHello”消息的一部分发送。</p>
+<p>在内部，服务器会为每个客户端保存一个会话ID和协商后的会话参数。相应地，客户端也可以保存会话ID信息，并将该ID包含在后续会话的“ClientHello”消息中，从而告诉服务器自己还记着上次握手协商后的加密套件和密钥呢，这些都可以重用。假设客户端和服务器都可以在自己的缓存中找到共享的会话ID参数，那么就可以进行简短握手。否则，就要重新启动一次全新的会话协商，生成新的会话ID。</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/session-Identifiers.svg" alt="session-Identifiers"></p>
+<h3 id="会话记录单">会话记录单</h3>
+<p>为了解决上述服务器端部署TLS会话缓存的问题，“会话记录单”（Session Ticket，RFC 5077）机制出台了，该机制不用服务器保存每个客户端的会话状态。相反，如果客户端表明其支持会话记录单，则服务器可以在完整TLS握手的最后一次交换中添加一条“新会话记录单”（New Session Ticket）记录，包含只有服务器知道的安全密钥加密过的所有会话数据。</p>
+<p>然后，客户端将这个会话记录单保存起来，在后续会话的ClientHello消息中，可以将其包含在SessionTicket扩展中。这样，所有会话数据只保存在客户端，而由于数据被加密过，且密钥只有服务器知道，因此仍然是安全的。</p>
+<h2 id="信任链与证书颁发机构">信任链与证书颁发机构</h2>
+<p>身份验证是建立每个TLS连接必不可少的部分。毕竟，加密信道两端可以是任何机器，包括攻击者的机器。为此，必须确保我们与之交谈的计算机是可信任的，否则之前的工作都是徒劳。为理解如何验证通信两端的身份，下面我们以张三和李四之间的验证为例简单说明一下：</p>
+<ul>
+<li>张三和李四分别生成自己的公钥和私钥；</li>
+<li>张三和李四分别隐藏自己的私钥；</li>
+<li>张三向李四公开自己的公钥，李四也向张三公开自己的公钥；</li>
+<li>张三向李四发送一条新消息，并用自己的私钥签名；</li>
+<li>李四使用张三的公钥验证收到的消息签名。</li>
+</ul>
+<p>信任是上述交流的关键。公钥加密可以让我们使用发送端的公钥验证消息是否使用了正确的私钥签名，但认可发送端仍然是基于信任。在上述交流中，张三和李四可以当面交换自己的公钥，因为他们互相认识，能够保证不被别人冒名顶替。可以说，他们已经通过之前安全（物理）的握手确认了对方。</p>
+<p>接下来，张三收到王五发来的一条消息。张三从未见过王五，但王五自称是李四的朋友。事实上，为了证明自己是李四的朋友，王五还请李四用李四的私钥签署了自己的公钥，并在消息中附上了签名（图4-4）。此时，张三首先检查王五公钥中李四的签名。他知道李四的公钥，因而可以验证李四确实签署了王五的公钥。由于他信任李四对王五的签名，所以就接受了王五的消息，并对消息进行完整性检查，以确保消息确实来自王五。</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/chain.png" alt="chain"></p>
+<p>我们的浏览器信任谁：</p>
+<ul>
+<li>
+<p>手工指定证书</p>
+<p>所有浏览器和操作系统都提供了一种手工导入信任证书的机制。至于如何获得证书和验证完整性则完全由你自己来定。</p>
+</li>
+<li>
+<p>证书颁发机构</p>
+<p>CA（Certificate Authority）是被证书接受者（拥有者）和依赖证书的一方共同信任的第三方。</p>
+</li>
+<li>
+<p>浏览器和操作系统</p>
+<p>每个操作系统和大多数浏览器都会内置一个知名证书颁发机构的名单。因此，你也会信任操作系统及浏览器提供商提供和维护的可信任机构。</p>
+</li>
+</ul>
+<h3 id="查看信用链">查看信用链</h3>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/tls/gchain.gif" alt="gchain"></p>
+<h2 id="证书的测试">证书的测试</h2>
+<p>最后，要验证和测试你的配置，可以使用Qualys SSL Server Test（https://www.ssllabs.com/ssltest/）等在线服务来扫描你的服务器，以发现常见的配置和安全漏洞。</p>
+<h3 id="openssl命令">openssl命令</h3>
+<p>使用openssl s_client命令可以发起TLS链接。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>➜  ~ openssl s_client -connect www.baidu.com:443 -state
+</span></span><span style="display:flex;"><span>CONNECTED<span style="color:#f92672">(</span>00000007<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>SSL_connect:before/connect initialization
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 write client hello A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read server hello A
+</span></span><span style="display:flex;"><span>depth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> C <span style="color:#f92672">=</span> BE, O <span style="color:#f92672">=</span> GlobalSign nv-sa, OU <span style="color:#f92672">=</span> Root CA, CN <span style="color:#f92672">=</span> GlobalSign Root CA
+</span></span><span style="display:flex;"><span>verify <span style="color:#66d9ef">return</span>:1
+</span></span><span style="display:flex;"><span>depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> C <span style="color:#f92672">=</span> BE, O <span style="color:#f92672">=</span> GlobalSign nv-sa, CN <span style="color:#f92672">=</span> GlobalSign Organization Validation CA - SHA256 - G2
+</span></span><span style="display:flex;"><span>verify <span style="color:#66d9ef">return</span>:1
+</span></span><span style="display:flex;"><span>depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> C <span style="color:#f92672">=</span> CN, ST <span style="color:#f92672">=</span> beijing, L <span style="color:#f92672">=</span> beijing, OU <span style="color:#f92672">=</span> service operation department, O <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Beijing Baidu Netcom Science Technology Co., Ltd&#34;</span>, CN <span style="color:#f92672">=</span> baidu.com
+</span></span><span style="display:flex;"><span>verify <span style="color:#66d9ef">return</span>:1
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read server certificate A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read server key exchange A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read server <span style="color:#66d9ef">done</span> A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 write client key exchange A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 write change cipher spec A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 write finished A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 flush data
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read server session ticket A
+</span></span><span style="display:flex;"><span>SSL_connect:SSLv3 read finished A
+</span></span></code></pre></div>
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/"></a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

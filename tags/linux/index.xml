@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/linux/</link>
+    <description>Recent content in linux on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>shell的字符串截取</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/</link>
+      <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/</guid>
+      <description>shell的字符串截取 目标 掌握常用的字符串截取操作 CUT 简单粗暴，直接指定结束位置和开始位置
+114.70 : ➜ ~ ME=scguo 114.70 : ➜ ~ echo $ME |cut -c 2-4 cgu 变量截取 删除左边字符 删除从左开始到第一个分隔符 ${line#*=} 其中 line 是变量名，# 号是运算符，*= 表示从左边开始删除第一个 = 号及左边的所有字符 114.70 : ➜ ~ line=&amp;#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&amp;#34; 114.70 : ➜ ~ echo ${line#*=} endDate=2018-01-31 23:59:59 删除从左开始到最后一个分隔符 startDate=${line##*=} 其中 line 是变量名，## 是运算符，*= 表示从左边开始删除最后（最右边）一个 = 号及左边的所有字符 114.70 : ➜ ~ line=&amp;#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&amp;#34; 114.70 : ➜ ~ echo ${line##*=} 2018-01-31 23:59:59 删除右边字符 删除从右开始到第一个分隔符 startDate=${line%=*} 其中 line 是变量名，% 是运算符，=* 表示从右边开始，删除第一个 = 号及右边的字符 114.</description>
+    </item>
+    
+    <item>
+      <title>终极 Shell----zsh</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</link>
+      <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</guid>
+      <description>终极 Shell&amp;mdash;-zsh 解决的问题 色彩高亮； 命令提示； 智能补全； 智能跳转； zsh介绍与安装 Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。
+Linux/Unix提供了很多种Shell，为毛要这么多Shell？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：
+cat /etc/shells 显示如下：
+# List of acceptable shells for chpass(1). # Ftpd will not allow users to connect who are not using # one of these shells. /bin/bash /bin/csh /bin/ksh /bin/sh /bin/tcsh /bin/zsh zsh的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash， 于是他创建了一个名为oh-my-zsh的开源项目，自此，只需要简单的安装配置，小白程序员们都可以用上高档大气上档次，狂拽炫酷吊炸天的oh my zsh。
+安装 参考文档-https://github.com/robbyrussell/oh-my-zsh
+插件配置 编辑用户目录下的.zshrc文件
+plugins=(adb autojump brew docker extract git go golang helm history httpie kubectl man node npm osx pip sublime svn z zsh-syntax-highlighting zsh-autosuggestions) 使用说明 色彩高亮 成功的命令是绿色； 错误的命令是红色； 会提示上一个命令是否执行成功； 命令提示 输入命令后，按两次tab可以查看命令支持的所有参数；</description>
+    </item>
+    
+    <item>
+      <title>内存指标与内存导致的常见问题</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</link>
+      <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</guid>
+      <description>内存指标与内存导致的常见问题 解决的问题 了解内存指标； swap的作用； system oom kill； java内存分析； Free命令 命令格式 [iflyweb@b0108011 ~]$ free --help Usage: free [options] Options: -b, --bytes show output in bytes -k, --kilo show output in kilobytes -m, --mega show output in megabytes -g, --giga show output in gigabytes --tera show output in terabytes -h, --human show human-readable output --si use powers of 1000 not 1024 -l, --lohi show detailed low and high memory statistics -t, --total show total for RAM + swap -s N, --seconds N repeat printing every N seconds -c N, --count N repeat printing N times, then exit -w, --wide wide output --help display this help and exit -V, --version output version information and exit For more details see free(1).</description>
+    </item>
+    
+    <item>
+      <title>理解系统负载</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</link>
+      <pubDate>Fri, 06 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</guid>
+      <description>理解系统负载 解决的问题 理解什么是load； 理解load值是多少合适； You might be familiar with Linux load averages already. Load averages are the three numbers shown with the uptime and top commands - they look like this:
+load average: 0.09, 0.05, 0.01 Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better. Higher numbers represent a problem or an overloaded machine.</description>
+    </item>
+    
+    <item>
+      <title>磁盘IO指标分析</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</link>
+      <pubDate>Thu, 05 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</guid>
+      <description>磁盘IO指标分析 解决的问题 查看有多少cpu时间被io消耗； 看那个进程占用了io； 查看系统的io状态； 查看有多少cpu时间被io消耗 top命令的cpu详情可以看到cpu的io等待时间；
+查看进程的io消耗 iotop命令可以查看进程的io消耗情况
+查看外设的io状态 iostat可以查看外设的io状态</description>
+    </item>
+    
+    <item>
+      <title>命令片段</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/gist/</link>
+      <pubDate>Wed, 04 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/gist/</guid>
+      <description>命令片段 kill name ps -ef |grep java |grep -v grep |cut -c 9-15 |xarge kill - 15 ps -ef |grep vim |grep -v grep |awk &amp;#39;{print $2}&amp;#39; |xargs kill -15 循环 # 循环一定次数 for (( i=1; i&amp;lt;= 10000; i++ )); do echo `date`; sleep 1 ; done # 遍历文件夹下所有文件执行某操作 for file in ./pcm/* ; do echo pcmtowav -in $file -out wav/$file.wav ; done # 遍历文件的每一行内容 while read LINE; do echo $LINE; done &amp;lt; result.</description>
+    </item>
+    
+    <item>
+      <title>命令行下的文本编辑</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</link>
+      <pubDate>Tue, 03 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</guid>
+      <description>命令行下的文本编辑 解决问题 命令行下的替换； 命令行下的定位； 命令行下的查找； 命令行下的撤销 命令行下的删除； VI 显示行号 命令模式下输入: set nu
+定位 命令模式下输入 :行号 跳到指定的行，输入 gg 跳到开够，输入 shift + g 跳到结尾
+删除 命令模式下使用 x 删除光标所在字符，使用 dd 删除光标所在行，数字dd 删除从当前行开始的多行。
+撤销与恢复 命令模式下使用 u 撤销操作，使用 ctrl+r 恢复撤销；
+查找 命令模式下输入 /关键字 可以开始查找，查找中输入 n 查找下一个，输入shift n 查找下一个；
+替换 命令模式下输入 :%s分隔符原始文本分隔符目标文本分隔符g 进行替换
+如:%s#aa#gg#g 把文档中的aa替换成gg
+SED 多文件替换 sed的大部分操作可以直接网上查询，而且vi也能提供，这里只介绍使用sed进行多个文件的替换
+sed -i &#39;s分隔符 原串 分隔符 目标穿 分隔符g&#39; *
+sed -i &#39;s#60.174.225.151#60.174.225.152#g&#39; * 把所有文件中的60.174.225.151替换成60.174.225.152</description>
+    </item>
+    
+    <item>
+      <title>CPU占用高问题的排查</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</link>
+      <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</guid>
+      <description>CPU占用高问题的排查 解决的问题 java进程cpu占用高分析； golang或者其他编程语言cpu占用高分析； 整体思路 通过top查看系统资源消耗； 找到占用cpu资源的tid（线程id）； 找到tid锁对应的堆栈信息； 查找进程 第一行 当前时间，启动时间，登陆用户数量，系统负载 第二行 进程数量，running数量，sleeping数量，stoped数量，zombie数量 第三行 cpu信息，us用户，sy系统，ni改变过优先级，id空闲，wa等待，hi硬中断，si软中断，st，运行在其他虚拟机上任务的cpu时间 第四行 内存信息，total总量，free空闲，used使用，buff/cache缓存 第五行 swap交换分区信息，total总量，free空闲，used使用，buff/cache缓存 第六行 空行 第七行 pid进程号，user用户，pr优先级，ni-Nice值，VIRT虚拟内存，RES物理内存，SHR共享内存，S进程状态，cpu占比，内存占比，cpu时间，命令 显示每个cpu核心 按1可以显示每个cpu核心信息。
+显示详细的启动命令 按c键可以显示详细的命令信息；
+显示排序 默认按照cpu排序，按x键可以高亮显示当前排序的列；
+按shift + &amp;gt; 键或者shift + &amp;lt; 可以修改排序的顺序
+线程查看 通过top -Hp pid可以查看进程中每个线程的cpu消耗情况；
+找到线程对应的代码 Java 打印线程堆栈 jstack pid 可以打印线程堆栈，然后可以通过输出重定向打印到文件中；
+找到线程的代码 通过top -Hp我们找到了资源消耗高的线程，jstack我们得到了每个线程正在执行的代码；
+jstack输出结果中有每个线程的nid对应的就是top -Hp里面的线程id，由于jstack输出是16进制的，我们需要把tid转成16进制，然后去查找
+[iflyweb@b0108011 ~]$ printf &amp;#34;%x\n&amp;#34; 6788 1a84 然后在文件中，找到nid为1a84线程；
+Golang 打印线程堆栈 golang可以使用系统提供的pstack命令进程的堆栈信息
+找到线程的代码 pstack打印结果里面的LWP就是线程的ID，找到对应的线程即可；</description>
+    </item>
+    
+    <item>
+      <title>awk的使用</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/</link>
+      <pubDate>Sun, 01 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/</guid>
+      <description>awk的使用 解决的问题 文本文件的统计； 日志文件的统计； 语法 awk 命令的基本格式
+awk [options] &amp;#39;script&amp;#39; file options 这个表示一些可选的参数选项，script 表示 awk 的可执行脚本代码（一般被{} 花括号包围），这个是必须的。file 这个表示 awk 需要处理的文件，注意需要是纯文本文件（意味着 awk 能够处理）。
+awk 自定义分隔符 之前提到的，awk 默认的分割符为空格和制表符，awk 会根据这个默认的分隔符将每一行分为若干字段，依次用 $1, $2,$3 来表示，可以使用 -F 参数来指定分隔符
+awk -F &amp;#39;:&amp;#39; &amp;#39;{print $1}&amp;#39; /etc/passwd 解释：使用 -F 来改变分隔符为 : ，比如上面的命令将 /etc/passwd 文件中的每一行用冒号 : 分割成多个字段，然后用 print 将第 1 列字段的内容打印输出
+在 awk 中同时指定多个分隔符，比如现在有这样一个文件 some.log 文件内容如下
+Grape(100g)1980 raisins(500g)1990 plum(240g)1997 apricot(180g)2005 nectarine(200g)2008 现在我们想将上面的 some.log 文件中按照 “水果名称（重量）年份” 来进行分割
+$ awk -F &amp;#39;[()]&amp;#39; &amp;#39;{print $1, $2, $3}&amp;#39; some.</description>
+    </item>
+    
+  </channel>
+</rss>

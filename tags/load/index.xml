@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>load on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/load/</link>
+    <description>Recent content in load on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/load/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解系统负载</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</link>
+      <pubDate>Fri, 06 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</guid>
+      <description>理解系统负载 解决的问题 理解什么是load； 理解load值是多少合适； You might be familiar with Linux load averages already. Load averages are the three numbers shown with the uptime and top commands - they look like this:
+load average: 0.09, 0.05, 0.01 Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better. Higher numbers represent a problem or an overloaded machine.</description>
+    </item>
+    
+  </channel>
+</rss>

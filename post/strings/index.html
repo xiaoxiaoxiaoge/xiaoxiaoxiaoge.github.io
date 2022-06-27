@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="shell的字符串截取">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>shell的字符串截取 &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>shell的字符串截取</h1>
+  <h2>shell的字符串截取</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>08 Sep 2019, 11:18</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/shell">shell</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="shell的字符串截取">shell的字符串截取</h1>
+<h2 id="目标">目标</h2>
+<blockquote>
+<ol>
+<li>掌握常用的字符串截取操作</li>
+</ol>
+</blockquote>
+<h2 id="cut">CUT</h2>
+<p>简单粗暴，直接指定结束位置和开始位置</p>
+<pre tabindex="0"><code>114.70 : ➜  ~ ME=scguo
+114.70 : ➜  ~ echo $ME |cut -c 2-4
+cgu
+</code></pre><h2 id="变量截取">变量截取</h2>
+<h3 id="删除左边字符">删除左边字符</h3>
+<h4 id="删除从左开始到第一个分隔符">删除从左开始到第一个分隔符</h4>
+<pre tabindex="0"><code>${line#*=}
+
+其中 line 是变量名，# 号是运算符，*= 表示从左边开始删除第一个 = 号及左边的所有字符
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line#*=<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>endDate<span style="color:#f92672">=</span>2018-01-31 23:59:59
+</span></span></code></pre></div><h4 id="删除从左开始到最后一个分隔符">删除从左开始到最后一个分隔符</h4>
+<pre tabindex="0"><code>startDate=${line##*=}
+
+其中 line 是变量名，## 是运算符，*= 表示从左边开始删除最后（最右边）一个 = 号及左边的所有字符
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line##*=<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>2018-01-31 23:59:59
+</span></span></code></pre></div><h3 id="删除右边字符">删除右边字符</h3>
+<h4 id="删除从右开始到第一个分隔符">删除从右开始到第一个分隔符</h4>
+<pre tabindex="0"><code>startDate=${line%=*}
+
+其中 line 是变量名，% 是运算符，=* 表示从右边开始，删除第一个 = 号及右边的字符
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line%=*<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>2018-01-01 00:00:00<span style="color:#f92672">=</span>endDate
+</span></span></code></pre></div><h4 id="删除从右开始到最后一个分隔符">删除从右开始到最后一个分隔符</h4>
+<pre tabindex="0"><code>startDate=${line%%=*}
+
+其中 line 是字符串，%% 是运算符，=* 表示从右边开始，删除最后（最左边）一个 = 号及右边的字符
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line%%=*<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>2018-01-01 00:00:00
+</span></span></code></pre></div><h3 id="从左位置截取">从左位置截取</h3>
+<pre tabindex="0"><code>${line:1:4}
+1表示从第几位开始，4表示截取多少位，4省略表示截取全部
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0:20<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>2018-01-01 00:00:00<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0:2<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0:3<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">201</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0:4<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2018</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:1:4<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>018-
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:1<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>018-01-01 00:00:00<span style="color:#f92672">=</span>endDate<span style="color:#f92672">=</span>2018-01-31 23:59:59
+</span></span></code></pre></div><h3 id="从右位置截取">从右位置截取</h3>
+<pre tabindex="0"><code>${line:0-19:10}
+其中 0-19 表示从右边算起第十九个字符开始，10 表示字符的个数，4省略表示截取全部
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>114.70 : ➜  ~ line<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&#34;</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0-19:10<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>2018-01-31
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0-18:10<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>018-01-31
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0-18:12<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>018-01-31 <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>114.70 : ➜  ~ echo <span style="color:#e6db74">${</span>line:0-18<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>018-01-31 23:59:59
+</span></span></code></pre></div>
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/">终极 Shell----zsh</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/js/math-code.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

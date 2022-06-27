@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/</link>
+    <description>Recent content in Posts on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>shell的字符串截取</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/</link>
+      <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/strings/</guid>
+      <description>shell的字符串截取 目标 掌握常用的字符串截取操作 CUT 简单粗暴，直接指定结束位置和开始位置
+114.70 : ➜ ~ ME=scguo 114.70 : ➜ ~ echo $ME |cut -c 2-4 cgu 变量截取 删除左边字符 删除从左开始到第一个分隔符 ${line#*=} 其中 line 是变量名，# 号是运算符，*= 表示从左边开始删除第一个 = 号及左边的所有字符 114.70 : ➜ ~ line=&amp;#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&amp;#34; 114.70 : ➜ ~ echo ${line#*=} endDate=2018-01-31 23:59:59 删除从左开始到最后一个分隔符 startDate=${line##*=} 其中 line 是变量名，## 是运算符，*= 表示从左边开始删除最后（最右边）一个 = 号及左边的所有字符 114.70 : ➜ ~ line=&amp;#34;2018-01-01 00:00:00=endDate=2018-01-31 23:59:59&amp;#34; 114.70 : ➜ ~ echo ${line##*=} 2018-01-31 23:59:59 删除右边字符 删除从右开始到第一个分隔符 startDate=${line%=*} 其中 line 是变量名，% 是运算符，=* 表示从右边开始，删除第一个 = 号及右边的字符 114.</description>
+    </item>
+    
+    <item>
+      <title>终极 Shell----zsh</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</link>
+      <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</guid>
+      <description>终极 Shell&amp;mdash;-zsh 解决的问题 色彩高亮； 命令提示； 智能补全； 智能跳转； zsh介绍与安装 Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。
+Linux/Unix提供了很多种Shell，为毛要这么多Shell？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：
+cat /etc/shells 显示如下：
+# List of acceptable shells for chpass(1). # Ftpd will not allow users to connect who are not using # one of these shells. /bin/bash /bin/csh /bin/ksh /bin/sh /bin/tcsh /bin/zsh zsh的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash， 于是他创建了一个名为oh-my-zsh的开源项目，自此，只需要简单的安装配置，小白程序员们都可以用上高档大气上档次，狂拽炫酷吊炸天的oh my zsh。
+安装 参考文档-https://github.com/robbyrussell/oh-my-zsh
+插件配置 编辑用户目录下的.zshrc文件
+plugins=(adb autojump brew docker extract git go golang helm history httpie kubectl man node npm osx pip sublime svn z zsh-syntax-highlighting zsh-autosuggestions) 使用说明 色彩高亮 成功的命令是绿色； 错误的命令是红色； 会提示上一个命令是否执行成功； 命令提示 输入命令后，按两次tab可以查看命令支持的所有参数；</description>
+    </item>
+    
+    <item>
+      <title>内存指标与内存导致的常见问题</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</link>
+      <pubDate>Sat, 07 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/</guid>
+      <description>内存指标与内存导致的常见问题 解决的问题 了解内存指标； swap的作用； system oom kill； java内存分析； Free命令 命令格式 [iflyweb@b0108011 ~]$ free --help Usage: free [options] Options: -b, --bytes show output in bytes -k, --kilo show output in kilobytes -m, --mega show output in megabytes -g, --giga show output in gigabytes --tera show output in terabytes -h, --human show human-readable output --si use powers of 1000 not 1024 -l, --lohi show detailed low and high memory statistics -t, --total show total for RAM + swap -s N, --seconds N repeat printing every N seconds -c N, --count N repeat printing N times, then exit -w, --wide wide output --help display this help and exit -V, --version output version information and exit For more details see free(1).</description>
+    </item>
+    
+    <item>
+      <title>理解系统负载</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</link>
+      <pubDate>Fri, 06 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/</guid>
+      <description>理解系统负载 解决的问题 理解什么是load； 理解load值是多少合适； You might be familiar with Linux load averages already. Load averages are the three numbers shown with the uptime and top commands - they look like this:
+load average: 0.09, 0.05, 0.01 Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better. Higher numbers represent a problem or an overloaded machine.</description>
+    </item>
+    
+    <item>
+      <title>磁盘IO指标分析</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</link>
+      <pubDate>Thu, 05 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/</guid>
+      <description>磁盘IO指标分析 解决的问题 查看有多少cpu时间被io消耗； 看那个进程占用了io； 查看系统的io状态； 查看有多少cpu时间被io消耗 top命令的cpu详情可以看到cpu的io等待时间；
+查看进程的io消耗 iotop命令可以查看进程的io消耗情况
+查看外设的io状态 iostat可以查看外设的io状态</description>
+    </item>
+    
+    <item>
+      <title>命令片段</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/gist/</link>
+      <pubDate>Wed, 04 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/gist/</guid>
+      <description>命令片段 kill name ps -ef |grep java |grep -v grep |cut -c 9-15 |xarge kill - 15 ps -ef |grep vim |grep -v grep |awk &amp;#39;{print $2}&amp;#39; |xargs kill -15 循环 # 循环一定次数 for (( i=1; i&amp;lt;= 10000; i++ )); do echo `date`; sleep 1 ; done # 遍历文件夹下所有文件执行某操作 for file in ./pcm/* ; do echo pcmtowav -in $file -out wav/$file.wav ; done # 遍历文件的每一行内容 while read LINE; do echo $LINE; done &amp;lt; result.</description>
+    </item>
+    
+    <item>
+      <title>命令行下的文本编辑</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</link>
+      <pubDate>Tue, 03 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</guid>
+      <description>命令行下的文本编辑 解决问题 命令行下的替换； 命令行下的定位； 命令行下的查找； 命令行下的撤销 命令行下的删除； VI 显示行号 命令模式下输入: set nu
+定位 命令模式下输入 :行号 跳到指定的行，输入 gg 跳到开够，输入 shift + g 跳到结尾
+删除 命令模式下使用 x 删除光标所在字符，使用 dd 删除光标所在行，数字dd 删除从当前行开始的多行。
+撤销与恢复 命令模式下使用 u 撤销操作，使用 ctrl+r 恢复撤销；
+查找 命令模式下输入 /关键字 可以开始查找，查找中输入 n 查找下一个，输入shift n 查找下一个；
+替换 命令模式下输入 :%s分隔符原始文本分隔符目标文本分隔符g 进行替换
+如:%s#aa#gg#g 把文档中的aa替换成gg
+SED 多文件替换 sed的大部分操作可以直接网上查询，而且vi也能提供，这里只介绍使用sed进行多个文件的替换
+sed -i &#39;s分隔符 原串 分隔符 目标穿 分隔符g&#39; *
+sed -i &#39;s#60.174.225.151#60.174.225.152#g&#39; * 把所有文件中的60.174.225.151替换成60.174.225.152</description>
+    </item>
+    
+    <item>
+      <title>CPU占用高问题的排查</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</link>
+      <pubDate>Mon, 02 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/</guid>
+      <description>CPU占用高问题的排查 解决的问题 java进程cpu占用高分析； golang或者其他编程语言cpu占用高分析； 整体思路 通过top查看系统资源消耗； 找到占用cpu资源的tid（线程id）； 找到tid锁对应的堆栈信息； 查找进程 第一行 当前时间，启动时间，登陆用户数量，系统负载 第二行 进程数量，running数量，sleeping数量，stoped数量，zombie数量 第三行 cpu信息，us用户，sy系统，ni改变过优先级，id空闲，wa等待，hi硬中断，si软中断，st，运行在其他虚拟机上任务的cpu时间 第四行 内存信息，total总量，free空闲，used使用，buff/cache缓存 第五行 swap交换分区信息，total总量，free空闲，used使用，buff/cache缓存 第六行 空行 第七行 pid进程号，user用户，pr优先级，ni-Nice值，VIRT虚拟内存，RES物理内存，SHR共享内存，S进程状态，cpu占比，内存占比，cpu时间，命令 显示每个cpu核心 按1可以显示每个cpu核心信息。
+显示详细的启动命令 按c键可以显示详细的命令信息；
+显示排序 默认按照cpu排序，按x键可以高亮显示当前排序的列；
+按shift + &amp;gt; 键或者shift + &amp;lt; 可以修改排序的顺序
+线程查看 通过top -Hp pid可以查看进程中每个线程的cpu消耗情况；
+找到线程对应的代码 Java 打印线程堆栈 jstack pid 可以打印线程堆栈，然后可以通过输出重定向打印到文件中；
+找到线程的代码 通过top -Hp我们找到了资源消耗高的线程，jstack我们得到了每个线程正在执行的代码；
+jstack输出结果中有每个线程的nid对应的就是top -Hp里面的线程id，由于jstack输出是16进制的，我们需要把tid转成16进制，然后去查找
+[iflyweb@b0108011 ~]$ printf &amp;#34;%x\n&amp;#34; 6788 1a84 然后在文件中，找到nid为1a84线程；
+Golang 打印线程堆栈 golang可以使用系统提供的pstack命令进程的堆栈信息
+找到线程的代码 pstack打印结果里面的LWP就是线程的ID，找到对应的线程即可；</description>
+    </item>
+    
+    <item>
+      <title>awk的使用</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/</link>
+      <pubDate>Sun, 01 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/awk/</guid>
+      <description>awk的使用 解决的问题 文本文件的统计； 日志文件的统计； 语法 awk 命令的基本格式
+awk [options] &amp;#39;script&amp;#39; file options 这个表示一些可选的参数选项，script 表示 awk 的可执行脚本代码（一般被{} 花括号包围），这个是必须的。file 这个表示 awk 需要处理的文件，注意需要是纯文本文件（意味着 awk 能够处理）。
+awk 自定义分隔符 之前提到的，awk 默认的分割符为空格和制表符，awk 会根据这个默认的分隔符将每一行分为若干字段，依次用 $1, $2,$3 来表示，可以使用 -F 参数来指定分隔符
+awk -F &amp;#39;:&amp;#39; &amp;#39;{print $1}&amp;#39; /etc/passwd 解释：使用 -F 来改变分隔符为 : ，比如上面的命令将 /etc/passwd 文件中的每一行用冒号 : 分割成多个字段，然后用 print 将第 1 列字段的内容打印输出
+在 awk 中同时指定多个分隔符，比如现在有这样一个文件 some.log 文件内容如下
+Grape(100g)1980 raisins(500g)1990 plum(240g)1997 apricot(180g)2005 nectarine(200g)2008 现在我们想将上面的 some.log 文件中按照 “水果名称（重量）年份” 来进行分割
+$ awk -F &amp;#39;[()]&amp;#39; &amp;#39;{print $1, $2, $3}&amp;#39; some.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/</guid>
+      <description>命令行模式下网络代理的使用 发现有些同学在浏览器使用网络代理，但对于命令行模式下的网络代理使用不是很了解，这里简单介绍下。
+7层代理使用 http_proxy 当前session生效 export http_proxy=http://proxyAddress:port
+当前命令生效 http_proxy=http://127.0.0.1:4081 命令 参数
+全局生效 把export http_proxy=http://proxyAddress:port放到profile中
+试验 ➜ Downloads http_proxy=http://127.0.0.1:4081 curl -I http://www.google.com HTTP/1.1 200 OK Connection: close Transfer-Encoding: chunked Cache-Control: private Content-Type: text/html; charset=ISO-8859-1 Date: Wed, 13 Jan 2021 02:39:02 GMT Expires: Wed, 13 Jan 2021 02:39:02 GMT P3p: CP=&amp;#34;This is not a P3P policy! See g.co/p3phelp for more info.&amp;#34; Server: gws Set-Cookie: 1P_JAR=2021-01-13-02; expires=Fri, 12-Feb-2021 02:39:02 GMT; path=/; domain=.google.com; Secure Set-Cookie: NID=207=dhIjAHt-X2dTXSH43aFe64BNhg-WYoPi34iLVyYwSer2scPdqL44akO2EXLp1c2pCXc9Aagtd1-DLevnNSPEBaaxtTGkugc2q0jIwCweCGd_gLoI8bqw94Amfzf7YPiB44FrPLu_0aq8LIqDhxOKdJGFA8kW5hVLvE2YhoIgl9Q; expires=Thu, 15-Jul-2021 02:39:02 GMT; path=/; domain=.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/timeout/</guid>
+      <description>使用tcpdump分析网络超时 一次完整的https请求至少包含下面两个部分，下面两个部分也是非常容易产生问题的。
+DNS解析 IPv4 IPv6 服务请求 tcp握手、tls握手、https请求、https响应、tcp挥手； 下面介绍一个示例说明分析的过程，通过crul请求baidu.com
+抓取DNS解析包 dns解析是通过udp 53端口发送请求的，通过上面的命令可以抓取到所有的dns请求。
+ping命令可以触发dns解析。
+可以使用wireshark分析dns解析的耗时情况，响应和请求之间的时间差值即为dns解析的耗时；
+Http请求分析 下图是抓取的一个完整的百度的请求；
+sudo tcpdump -i en0 host 14.215.177.38 -w baidu.pcapng curl http://www.baidu.com 分析说明：
+网络延时 从客户端发出SYN到收到服务端的ACK耗时为25毫秒，则客户端与服务端的双向网络延时为25ms左右；
+可以通过ping来印证下网络延时情况；
+处理延时 服务端处理耗时=客户端收到resp时间-客户端发出req时间-网络耗时=0.0642-0.0255-0.0255=13ms
+Https请求分析 下图是一个模拟的https请求；
+网络耗时 从客户端发出SYN到收到服务端的ACK耗时为25毫秒，则客户端与服务端的双向网络延时为32ms左右；
+https握手耗时 在0.108时完成了tls的握手，整个tls的握手耗时70ms
+处理耗时 假设握手完成后开始发送请求，接受完所有数据后关闭请求
+处理耗时=关闭tcp链接时刻-tls握手成功时刻-网络耗时= 0.143-0.108-0.032=3ms
+心得 可以看到网络延时是耗时的关键，不管后台处理多快，客户端到服务端的tcp握手，tls握手都很耗时；</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls-staticip/</guid>
+      <description>Nginx自签静态IP证书踩锅 目标
+掌握通过抓包分析TLS握手问题的方法； 背景说明 统计某一服务的现网日志，发现有5%的客户端请求出现UnknownHost的情况，猜测可能是域名解析问题，或者客户网络本身就有问题；
+拟通过绕过DNS解析直接访问服务的方式，验证是DNS解析模块问题，或者是真实网络问题；
+自签证书 生成私钥 openssl genrsa -out server.key 2048 Generating RSA private key, 2048 bit long modulus ..........+++ ...........................................+++ e is 65537 (0x10001) 生成证书 openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650 You are about to be asked to enter information that will be incorporated into your certificate request. What you are about to enter is what is called a Distinguished Name or a DN.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/tls/</guid>
+      <description>TLS原理与实战 目标
+理解TLS的原理； 知道TLS体系下的常见概念； 理解证书相关的概念； 能够解决常见的证书安全性问题； TLS的作用 加密：可以混淆数据，防止请求被监听；
+身份验证：验证身份标识有效性机制；
+完整性：校验消息是否被篡改或伪造；
+TLS握手 0 ms TLS在可靠的传输层（TCP）之上运行，这意味着首先必须完成TCP的“三次握手”，即一次完整的往返。
+56 ms TCP连接建立之后，客户端再以纯文本形式发送一些规格说明，比如它所运行的TLS协议的版本、它所支持的加密套件列表，以及它支持或希望使用的另外一些TLS选项。
+84 ms 然后，服务器取得TLS协议版本以备将来通信使用，从客户端提供的加密套件列表中选择一个，再附上自己的证书，将响应发送回客户端。作为可选项，服务器也可以发送一个请求，要求客户端提供证书以及其他TLS扩展参数。
+112 ms 假设两端经过协商确定了共同的版本和加密套件，客户端也高高兴兴地把自己的证书提供给了服务器。然后，客户端会生成一个新的对称密钥，用服务器的公钥来加密，加密后发送给服务器，告诉服务器可以开始加密通信了。到目前为止，除了用服务器公钥加密的新对称密钥之外，所有数据都以明文形式发送。
+140 ms 最后，服务器解密出客户端发来的对称密钥，通过验证消息的MAC检测消息完整性，再返回给客户端一个加密的“Finished”消息。
+168 ms 客户端用它之前生成的对称密钥解密这条消息，验证MAC，如果一切顺利，则建立信道并开始发送应用数据。
+ALPN 假设请求一个服务a.example.com:5000，作为HTTPS会话，当然可以利用HTTP的Upgrade机制来协商，但这会导致一次额外的往返，造成延迟。那在TLS握手的同时协商确定协议可行吗？
+应用层协商协议，让我们能在TLS握手的同时协商应用协议（图4-2），从而省掉了HTTP的Upgrade机制所需的额外往返时间。具体来说，整个过程分如下几步：
+客户端在ClientHello消息中追加一个新的ProtocolNameList字段，包含自己支持的应用协议； 服务器检查ProtocolNameList字段，并在ServerHello消息中以ProtocolName字段返回选中的协议。 SNI 网络上可以建立TCP连接的任意两端都可以建立加密TLS信道，客户端只需知道另一端的IP地址即可建立连接并进行TLS握手。然而，如果服务器想在一个IP地址为多个站点提供服务，而每个站点都拥有自己的TLS证书，那怎么办？这问题看似有点怪，但其实一点都不怪。
+为了解决这个问题，SNI（Server Name Indication，服务器名称指示）扩展被引入TLS协议，该扩展允许客户端在握手之初就指明要连接的主机名。Web服务器可以检查SNI主机名，选择适当的证书，继续完成握手。
+遗憾的是，很多旧版本的客户端（Windows XP上的大多数IE、Android 2.2等平台上的浏览器）都不支持SNI。如果你想与这些旧版本的客户端进行TLS通信，就得为每个主机准备一个专用IP地址。
+TLS会话恢复 完整TLS握手会带来额外的延迟和计算量，从而给所有依赖安全通信的应用造成严重的性能损失。为了挽回某些损失，TLS提供了恢复功能，即在多个连接间共享协商后的安全密钥。
+会话标识符 最早的“会话标识符”（Session Identifier，RFC 5246）机制是在SSL 2.0中引入的，支持服务器创建32字节的会话标识符，并在上一节我们讨论的完整的TLS协商期间作为其“ServerHello”消息的一部分发送。
+在内部，服务器会为每个客户端保存一个会话ID和协商后的会话参数。相应地，客户端也可以保存会话ID信息，并将该ID包含在后续会话的“ClientHello”消息中，从而告诉服务器自己还记着上次握手协商后的加密套件和密钥呢，这些都可以重用。假设客户端和服务器都可以在自己的缓存中找到共享的会话ID参数，那么就可以进行简短握手。否则，就要重新启动一次全新的会话协商，生成新的会话ID。
+会话记录单 为了解决上述服务器端部署TLS会话缓存的问题，“会话记录单”（Session Ticket，RFC 5077）机制出台了，该机制不用服务器保存每个客户端的会话状态。相反，如果客户端表明其支持会话记录单，则服务器可以在完整TLS握手的最后一次交换中添加一条“新会话记录单”（New Session Ticket）记录，包含只有服务器知道的安全密钥加密过的所有会话数据。
+然后，客户端将这个会话记录单保存起来，在后续会话的ClientHello消息中，可以将其包含在SessionTicket扩展中。这样，所有会话数据只保存在客户端，而由于数据被加密过，且密钥只有服务器知道，因此仍然是安全的。
+信任链与证书颁发机构 身份验证是建立每个TLS连接必不可少的部分。毕竟，加密信道两端可以是任何机器，包括攻击者的机器。为此，必须确保我们与之交谈的计算机是可信任的，否则之前的工作都是徒劳。为理解如何验证通信两端的身份，下面我们以张三和李四之间的验证为例简单说明一下：
+张三和李四分别生成自己的公钥和私钥； 张三和李四分别隐藏自己的私钥； 张三向李四公开自己的公钥，李四也向张三公开自己的公钥； 张三向李四发送一条新消息，并用自己的私钥签名； 李四使用张三的公钥验证收到的消息签名。 信任是上述交流的关键。公钥加密可以让我们使用发送端的公钥验证消息是否使用了正确的私钥签名，但认可发送端仍然是基于信任。在上述交流中，张三和李四可以当面交换自己的公钥，因为他们互相认识，能够保证不被别人冒名顶替。可以说，他们已经通过之前安全（物理）的握手确认了对方。
+接下来，张三收到王五发来的一条消息。张三从未见过王五，但王五自称是李四的朋友。事实上，为了证明自己是李四的朋友，王五还请李四用李四的私钥签署了自己的公钥，并在消息中附上了签名（图4-4）。此时，张三首先检查王五公钥中李四的签名。他知道李四的公钥，因而可以验证李四确实签署了王五的公钥。由于他信任李四对王五的签名，所以就接受了王五的消息，并对消息进行完整性检查，以确保消息确实来自王五。
+我们的浏览器信任谁：
+手工指定证书
+所有浏览器和操作系统都提供了一种手工导入信任证书的机制。至于如何获得证书和验证完整性则完全由你自己来定。
+证书颁发机构</description>
+    </item>
+    
+  </channel>
+</rss>

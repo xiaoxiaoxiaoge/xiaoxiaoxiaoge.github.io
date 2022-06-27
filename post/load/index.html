@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="理解系统负载">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>理解系统负载 &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>理解系统负载</h1>
+  <h2>理解系统负载</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>06 Sep 2019, 11:18</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/load">load</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="理解系统负载">理解系统负载</h1>
+<h2 id="解决的问题">解决的问题</h2>
+<blockquote>
+<ol>
+<li>理解什么是load；</li>
+<li>理解load值是多少合适；</li>
+</ol>
+</blockquote>
+<p>You might be familiar with Linux load averages already. Load averages are the three numbers shown with the <code>uptime</code> and <code>top</code> commands - they look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>load average: 0.09, 0.05, 0.01
+</span></span></code></pre></div><p>Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better. Higher numbers represent a problem or an overloaded machine. But, what&rsquo;s the the threshold? What constitutes &ldquo;good&rdquo; and &ldquo;bad&rdquo; load average values? When should you be concerned over a load average value, and when should you scramble to fix it ASAP?</p>
+<p>First, a little background on what the load average values mean. We&rsquo;ll start out with the simplest case: a machine with one single-core processor.</p>
+<p>First, a little background on what the load average values mean. We&rsquo;ll start out with the simplest case: a machine with one single-core processor.</p>
+<h2 id="the-traffic-analogy">The traffic analogy</h2>
+<p>A single-core CPU is like a single lane of traffic. Imagine you are a bridge operator &hellip; sometimes your bridge is so busy there are cars lined up to cross. You want to let folks know how traffic is moving on your bridge. A decent metric would be <em>how many cars are waiting</em> at a particular time. If no cars are waiting, incoming drivers know they can drive across right away. If cars are backed up, drivers know they&rsquo;re in for delays.</p>
+<p>So, Bridge Operator, what numbering system are you going to use? How about:</p>
+<ul>
+<li><strong>0.00 means there&rsquo;s no traffic on the bridge at all</strong>. In fact, between 0.00 and 1.00 means there&rsquo;s no backup, and an arriving car will just go right on.</li>
+<li><strong>1.00 means the bridge is exactly at capacity.</strong> All is still good, but if traffic gets a little heavier, things are going to slow down.</li>
+<li><strong>over 1.00 means there&rsquo;s backup.</strong> How much? Well, 2.00 means that there are two lanes worth of cars total &ndash; one lane&rsquo;s worth on the bridge, and one lane&rsquo;s worth waiting. 3.00 means there are three lane&rsquo;s worth total &ndash; one lane&rsquo;s worth on the bridge, and two lanes&rsquo; worth waiting. Etc.</li>
+</ul>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/load/1.png" alt="img"> = load of 1.00</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/load/2.png" alt="img"> = load of 0.50</p>
+<p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/load/3.png" alt="img"> = load of 1.70</p>
+<p>This is basically what CPU load is. &ldquo;Cars&rdquo; are processes using a slice of CPU time (&ldquo;crossing the bridge&rdquo;) or queued up to use the CPU. Unix refers to this as the <em>run-queue length</em>: the sum of the number of processes that are currently running plus the number that are waiting (queued) to run.</p>
+<p>Like the bridge operator, you&rsquo;d like your cars/processes to never be waiting. So, your CPU load should ideally stay below 1.00. Also like the bridge operator, you are still ok if you get some temporary spikes above 1.00 &hellip; but when you&rsquo;re consistently above 1.00, you need to worry.</p>
+<h2 id="so-youre-saying-the-ideal-load-is-100">So you&rsquo;re saying the ideal load is 1.00?</h2>
+<p>Well, not exactly. The problem with a load of 1.00 is that you have no headroom. In practice, many sysadmins will draw a line at 0.70:</p>
+<ul>
+<li>The <strong>&ldquo;Need to Look into it&rdquo;</strong> Rule of Thumb: <strong>0.70</strong> If your load average is staying above &gt; 0.70, it&rsquo;s time to investigate before things get worse.</li>
+<li>The <strong>&ldquo;Fix this now&rdquo;</strong> Rule of Thumb: <strong>1.00</strong>. If your load average stays above 1.00, find the problem and fix it now. Otherwise, you&rsquo;re going to get woken up in the middle of the night, and it&rsquo;s not going to be fun.</li>
+<li>The <strong>&ldquo;Arrgh, it&rsquo;s 3AM WTF?&rdquo;</strong> Rule of Thumb: <strong>5.0</strong>. If your load average is above 5.00, you could be in serious trouble, your box is either hanging or slowing way down, and this will (inexplicably) happen in the worst possible time like in the middle of the night or when you&rsquo;re presenting at a conference. Don&rsquo;t let it get there.</li>
+</ul>
+<h2 id="what-about-multi-processors-my-load-says-300-but-things-are-running-fine">What about Multi-processors? My load says 3.00, but things are running fine!</h2>
+<p>Got a quad-processor system? It&rsquo;s still healthy with a load of 3.00.</p>
+<p>On multi-processor system, the load is relative to the number of processor cores available. The &ldquo;100% utilization&rdquo; mark is 1.00 on a single-core system, 2.00, on a dual-core, 4.00 on a quad-core, etc.</p>
+<p>If we go back to the bridge analogy, the &ldquo;1.00&rdquo; really means &ldquo;one lane&rsquo;s worth of traffic&rdquo;. On a one-lane bridge, that means it&rsquo;s filled up. On a two-late bridge, a load of 1.00 means its at 50% capacity &ndash; only one lane is full, so there&rsquo;s another whole lane that can be filled.</p>
+<p>Same with CPUs: a load of 1.00 is 100% CPU utilization on single-core box. On a dual-core box, a load of 2.00 is 100% CPU utilization.</p>
+<h2 id="multicore-vs-multiprocessor">Multicore vs. multiprocessor</h2>
+<p>While we&rsquo;re on the topic, let&rsquo;s talk about multicore vs. multiprocessor. For performance purposes, is a machine with a single dual-core processor basically equivalent to a machine with two processors with one core each? Yes. Roughly. There are lots of subtleties here concerning amount of cache, frequency of process hand-offs between processors, etc. Despite those finer points, for the purposes of sizing up the CPU load value, the <em>total number of cores</em> is what matters, regardless of how many physical processors those cores are spread across.</p>
+<p>Which leads us to a two new Rules of Thumb:</p>
+<ul>
+<li><em>The &ldquo;number of cores = max load&rdquo;</em> Rule of Thumb: on a multicore system, your load should not exceed the number of cores available.</li>
+<li>The <em>&ldquo;cores is cores&rdquo;</em> Rule of Thumb: How the cores are spread out over CPUs doesn&rsquo;t matter. Two quad-cores == four dual-cores == eight single-cores. It&rsquo;s all eight cores for these purposes.</li>
+</ul>
+<h2 id="bringing-it-home">Bringing It Home</h2>
+<p>Let&rsquo;s take a look at the load averages output from <code>uptime</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ $ uptime
+</span></span><span style="display:flex;"><span>23:05 up <span style="color:#ae81ff">14</span> days, 6:08, <span style="color:#ae81ff">7</span> users, load averages: 0.65 0.42 0.36
+</span></span></code></pre></div><p>This is on a dual-core CPU, so we&rsquo;ve got lots of headroom. I won&rsquo;t even think about it until load gets and stays above 1.7 or so.</p>
+<p>Now, what about those three numbers? 0.65 is the average over the last minute, 0.42 is the average over the last five minutes, and 0.36 is the average over the last 15 minutes. Which brings us to the question:</p>
+<p><strong>Which average should I be observing? One, five, or 15 minute?</strong></p>
+<p>For the numbers we&rsquo;ve talked about (1.00 = fix it now, etc), you should be looking at the five or 15-minute averages. Frankly, if your box spikes above 1.0 on the one-minute average, you&rsquo;re still fine. It&rsquo;s when the 15-minute average goes north of 1.0 and stays there that you need to snap to. (obviously, as we&rsquo;ve learned, adjust these numbers to the number of processor cores your system has).</p>
+<p><strong>So # of cores is important to interpreting load averages &hellip; how do I know how many cores my system has?</strong></p>
+<p><code>cat /proc/cpuinfo</code> to get info on each processor in your system. <em>Note: not available on OSX, Google for alternatives</em>. To get just a count, run it through <code>grep</code> and word count: <code>grep 'model name' /proc/cpuinfo | wc -l</code></p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/mem/">内存指标与内存导致的常见问题</a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/">磁盘IO指标分析</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/io/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/js/math-code.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

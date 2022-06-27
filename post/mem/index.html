@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="内存指标与内存导致的常见问题">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>内存指标与内存导致的常见问题 &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>内存指标与内存导致的常见问题</h1>
+  <h2>内存指标与内存导致的常见问题</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>07 Sep 2019, 11:18</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/free">free</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/top">top</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/gc">gc</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="内存指标与内存导致的常见问题">内存指标与内存导致的常见问题</h1>
+<h2 id="解决的问题">解决的问题</h2>
+<blockquote>
+<ol>
+<li>了解内存指标；</li>
+<li>swap的作用；</li>
+<li>system oom kill；</li>
+<li>java内存分析；</li>
+</ol>
+</blockquote>
+<h2 id="free命令">Free命令</h2>
+<h3 id="命令格式">命令格式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>iflyweb@b0108011 ~<span style="color:#f92672">]</span>$ free --help
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Usage:
+</span></span><span style="display:flex;"><span> free <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span> -b, --bytes         show output in bytes
+</span></span><span style="display:flex;"><span> -k, --kilo          show output in kilobytes
+</span></span><span style="display:flex;"><span> -m, --mega          show output in megabytes
+</span></span><span style="display:flex;"><span> -g, --giga          show output in gigabytes
+</span></span><span style="display:flex;"><span>     --tera          show output in terabytes
+</span></span><span style="display:flex;"><span> -h, --human         show human-readable output
+</span></span><span style="display:flex;"><span>     --si            use powers of <span style="color:#ae81ff">1000</span> not <span style="color:#ae81ff">1024</span>
+</span></span><span style="display:flex;"><span> -l, --lohi          show detailed low and high memory statistics
+</span></span><span style="display:flex;"><span> -t, --total         show total <span style="color:#66d9ef">for</span> RAM + swap
+</span></span><span style="display:flex;"><span> -s N, --seconds N   repeat printing every N seconds
+</span></span><span style="display:flex;"><span> -c N, --count N     repeat printing N times, <span style="color:#66d9ef">then</span> exit
+</span></span><span style="display:flex;"><span> -w, --wide          wide output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     --help     display this help and exit
+</span></span><span style="display:flex;"><span> -V, --version  output version information and exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For more details see free<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>.
+</span></span></code></pre></div><h3 id="命令功能">命令功能</h3>
+<p>free 命令显示系统使用和空闲的内存情况，包括物理内存、交互区内存(swap)和内核缓冲区内存。</p>
+<h2 id="meminfo">Meminfo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>iflyweb@b0108011 ~<span style="color:#f92672">]</span>$ cat /proc/meminfo
+</span></span><span style="display:flex;"><span>MemTotal:       <span style="color:#ae81ff">131817220</span> kB
+</span></span><span style="display:flex;"><span>MemFree:        <span style="color:#ae81ff">30313592</span> kB
+</span></span><span style="display:flex;"><span>MemAvailable:   <span style="color:#ae81ff">101099456</span> kB
+</span></span><span style="display:flex;"><span>Buffers:            <span style="color:#ae81ff">2032</span> kB
+</span></span><span style="display:flex;"><span>Cached:         <span style="color:#ae81ff">72130692</span> kB
+</span></span><span style="display:flex;"><span>SwapCached:            <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>Active:         <span style="color:#ae81ff">63425732</span> kB
+</span></span><span style="display:flex;"><span>Inactive:       <span style="color:#ae81ff">32770144</span> kB
+</span></span><span style="display:flex;"><span>Active<span style="color:#f92672">(</span>anon<span style="color:#f92672">)</span>:   <span style="color:#ae81ff">26625248</span> kB
+</span></span><span style="display:flex;"><span>Inactive<span style="color:#f92672">(</span>anon<span style="color:#f92672">)</span>:  <span style="color:#ae81ff">1642480</span> kB
+</span></span><span style="display:flex;"><span>Active<span style="color:#f92672">(</span>file<span style="color:#f92672">)</span>:   <span style="color:#ae81ff">36800484</span> kB
+</span></span><span style="display:flex;"><span>Inactive<span style="color:#f92672">(</span>file<span style="color:#f92672">)</span>: <span style="color:#ae81ff">31127664</span> kB
+</span></span><span style="display:flex;"><span>Unevictable:           <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>Mlocked:               <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>SwapTotal:             <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>SwapFree:              <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>Dirty:              <span style="color:#ae81ff">1644</span> kB
+</span></span><span style="display:flex;"><span>Writeback:             <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>AnonPages:      <span style="color:#ae81ff">24065292</span> kB
+</span></span><span style="display:flex;"><span>Mapped:           <span style="color:#ae81ff">487488</span> kB
+</span></span><span style="display:flex;"><span>Shmem:           <span style="color:#ae81ff">4204532</span> kB
+</span></span><span style="display:flex;"><span>Slab:            <span style="color:#ae81ff">3687716</span> kB
+</span></span><span style="display:flex;"><span>SReclaimable:    <span style="color:#ae81ff">3195588</span> kB
+</span></span><span style="display:flex;"><span>SUnreclaim:       <span style="color:#ae81ff">492128</span> kB
+</span></span><span style="display:flex;"><span>KernelStack:       <span style="color:#ae81ff">83680</span> kB
+</span></span><span style="display:flex;"><span>PageTables:       <span style="color:#ae81ff">483704</span> kB
+</span></span><span style="display:flex;"><span>NFS_Unstable:          <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>Bounce:                <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>WritebackTmp:          <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>CommitLimit:    <span style="color:#ae81ff">65908608</span> kB
+</span></span><span style="display:flex;"><span>Committed_AS:   <span style="color:#ae81ff">105060412</span> kB
+</span></span><span style="display:flex;"><span>VmallocTotal:   <span style="color:#ae81ff">34359738367</span> kB
+</span></span><span style="display:flex;"><span>VmallocUsed:      <span style="color:#ae81ff">516588</span> kB
+</span></span><span style="display:flex;"><span>VmallocChunk:   <span style="color:#ae81ff">34290905608</span> kB
+</span></span><span style="display:flex;"><span>HardwareCorrupted:     <span style="color:#ae81ff">0</span> kB
+</span></span><span style="display:flex;"><span>AnonHugePages:  <span style="color:#ae81ff">17707008</span> kB
+</span></span><span style="display:flex;"><span>HugePages_Total:       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>HugePages_Free:        <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>HugePages_Rsvd:        <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>HugePages_Surp:        <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Hugepagesize:       <span style="color:#ae81ff">2048</span> kB
+</span></span><span style="display:flex;"><span>DirectMap4k:      <span style="color:#ae81ff">539584</span> kB
+</span></span><span style="display:flex;"><span>DirectMap2M:    <span style="color:#ae81ff">61280256</span> kB
+</span></span><span style="display:flex;"><span>DirectMap1G:    <span style="color:#ae81ff">74448896</span> kB
+</span></span></code></pre></div><h2 id="buffer与cache区别">buffer与cache区别</h2>
+<p>为了提高磁盘存取效率, Linux做了一些精心的设计, 除了对dentry进行缓存(用于VFS,加速文件路径名到inode的转换), 还采取了两种主要Cache方式：Buffer Cache和Page Cache。前者针对磁盘块的读写，后者针对文件inode的读写。这些Cache有效缩短了 I/O系统调用(比如read,write,getdents)的时间。</p>
+<p>磁盘的操作有逻辑级（文件系统）和物理级（磁盘块），这两种Cache就是分别缓存逻辑和物理级数据的。</p>
+<p>Page cache实际上是针对文件系统的，是文件的缓存，在文件层面上的数据会缓存到page cache。文件的逻辑层需要映射到实际的物理磁盘，这种映射关系由文件系统来完成。当page cache的数据需要刷新时，page cache中的数据交给buffer cache，因为Buffer Cache就是缓存磁盘块的。但是这种处理在2.6版本的内核之后就变的很简单了，没有真正意义上的cache操作。</p>
+<p>Buffer cache是针对磁盘块的缓存，也就是在没有文件系统的情况下，直接对磁盘进行操作的数据会缓存到buffer cache中，例如，文件系统的元数据都会缓存到buffer cache中。</p>
+<p>简单说来，page cache用来缓存文件数据，buffer cache用来缓存磁盘数据。在有文件系统的情况下，对文件操作，那么数据会缓存到page cache，如果直接采用dd等工具对磁盘进行读写，那么数据会缓存到buffer cache。</p>
+<p>所以我们看linux,只要不用swap的交换空间,就不用担心自己的内存太少.如果常常swap用很多,可能你就要考虑加物理内存了.这也是linux看内存是否够用的标准.</p>
+<h2 id="swap">SWAP</h2>
+<p>在linux里面，当物理内存不够用了，而又有新的程序请求分配内存，那么linux就会选择将其他程序暂时不用的数据交换到物理磁盘上(swap out)，等程序要用的时候再读进来(swap in)。这样做的坏处显而易见，swap in/swap out这里的代价比较大，相比数据一直放在内存里面，多了读磁盘的操作，而磁盘IO会导致左右的cpu时间都在等在IO，而导致系统负载很高。</p>
+<h2 id="oom-killer">OOM-Killer</h2>
+<p>OOM killer 会杀掉某个进程以腾出内存留给系统用，不致于让系统立刻崩溃。</p>
+<p>与OOM相关的几个文件是 /proc/${pid}/oom_adj 、 /proc/${pid}/oom_score。前者是一个权值-16至15，默认是0，设置为-17表示永远不被kill，其余情况值越大越容易被kill。后者就是它计算出来的一个值，就是根据这个值来选择哪些进程被kill掉的。</p>
+<h2 id="java-内存">Java 内存</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>jstat -gcutil pid 间隔 次数
+</span></span><span style="display:flex;"><span>jstat -gcutil <span style="color:#ae81ff">6743</span> <span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><p><img src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/images/mem/jstat.gif" alt=""></p>
+<p>重点列输出说明：</p>
+<blockquote>
+<ol>
+<li>S0  — Heap上的 Survivor space 0 区已使用空间的百分比</li>
+<li>S1  — Heap上的 Survivor space 1 区已使用空间的百分比</li>
+<li>E   — Heap上的 Eden space 区已使用空间的百分比</li>
+<li>O   — Heap上的 Old space 区已使用空间的百分比</li>
+<li>YGC — 从应用程序启动到采样时发生 Young GC 的次数</li>
+<li>YGCT– 从应用程序启动到采样时 Young GC 所用的时间(单位秒)</li>
+<li>FGC — 从应用程序启动到采样时发生 Full GC 的次数</li>
+<li>FGCT– 从应用程序启动到采样时 Full GC 所用的时间(单位秒)</li>
+<li>GCT — 从应用程序启动到采样时用于垃圾回收的总时间(单位秒)</li>
+</ol>
+</blockquote>
+<h3 id="垃圾回收说明">垃圾回收说明</h3>
+<p>分代是Java垃圾收集的一大亮点，根据对象的生命周期长短，把堆分为3个代：Young，Old和Permanent，根据不同代的特点采用不同的收集算法，扬长避短也。</p>
+<p>复制算法优点是只访问活跃对象，缺点是复制成本高。因为年轻代只有少量的对象能熬到垃圾收集，因此只需少量的复制成本。而且复制收集器只访问活跃对象，对那些占了最大比率的死对象视而不见，充分发挥了它遍历空间成本低的优点。</p>
+<p>Young（年轻代）</p>
+<p>年轻代分三个区。一个Eden区，两个Survivor区。大部分对象在Eden区中生成。当Eden区满时，还存活的对象将被复制到Survivor区 （两个中的一个），当这个Survivor区满时，此区的存活对象将被复制到另外一个Survivor区，当这个Survivor去也满了的时候，从第一 个Survivor区复制过来的并且此时还存活的对象，将被复制“年老区(Tenured)”。需要注意，Survivor的两个区是对称的，没先后关 系，所以同一个区中可能同时存在从Eden复制过来 对象，和从前一个Survivor复制过来的对象，而复制到年老区的只有从第一个Survivor去过来的对象。而且，Survivor区总有一个是空 的。</p>
+<p>Tenured（年老代）</p>
+<p>年老代存放从年轻代存活的对象。一般来说年老代存放的都是生命期较长的对象。</p>
+<p>Perm（持久代）</p>
+<p>用 于存放静态文件，如今Java类、方法等。持久代对垃圾回收没有显著影响，但是有些应用可能动态生成或者调用一些class，例如Hibernate等， 在这种时候需要设置一个比较大的持久代空间来存放这些运行过程中新增的类。持久代大小通过-XX:MaxPermSize=进行设置。</p>
+<p>Gc的基本概念</p>
+<p>gc分为full gc 跟 minor gc，当每一块区满的时候都会引发gc。</p>
+<p>Scavenge GC</p>
+<p>一般情况下，当新对象生成，并且在Eden申请空间失败时，就触发了Scavenge GC，堆Eden区域进行GC，清除非存活对象，并且把尚且存活的对象移动到Survivor区。然后整理Survivor的两个区。</p>
+<p>Full GC</p>
+<p>对整个堆进行整理，包括Young、Tenured和Perm。Full GC比Scavenge GC要慢，因此应该尽可能减少Full GC。有如下原因可能导致Full GC。</p>
+
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/">终极 Shell----zsh</a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/">理解系统负载</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/load/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/js/math-code.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vi on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/vi/</link>
+    <description>Recent content in vi on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 03 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>命令行下的文本编辑</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</link>
+      <pubDate>Tue, 03 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/editor/</guid>
+      <description>命令行下的文本编辑 解决问题 命令行下的替换； 命令行下的定位； 命令行下的查找； 命令行下的撤销 命令行下的删除； VI 显示行号 命令模式下输入: set nu
+定位 命令模式下输入 :行号 跳到指定的行，输入 gg 跳到开够，输入 shift + g 跳到结尾
+删除 命令模式下使用 x 删除光标所在字符，使用 dd 删除光标所在行，数字dd 删除从当前行开始的多行。
+撤销与恢复 命令模式下使用 u 撤销操作，使用 ctrl+r 恢复撤销；
+查找 命令模式下输入 /关键字 可以开始查找，查找中输入 n 查找下一个，输入shift n 查找下一个；
+替换 命令模式下输入 :%s分隔符原始文本分隔符目标文本分隔符g 进行替换
+如:%s#aa#gg#g 把文档中的aa替换成gg
+SED 多文件替换 sed的大部分操作可以直接网上查询，而且vi也能提供，这里只介绍使用sed进行多个文件的替换
+sed -i &#39;s分隔符 原串 分隔符 目标穿 分隔符g&#39; *
+sed -i &#39;s#60.174.225.151#60.174.225.152#g&#39; * 把所有文件中的60.174.225.151替换成60.174.225.152</description>
+    </item>
+    
+  </channel>
+</rss>

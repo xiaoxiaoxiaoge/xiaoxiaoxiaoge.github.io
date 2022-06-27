@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="awk的使用">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <title>awk的使用 &middot; Hddata</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitimg/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/">Hddata</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/"><i class='fa fa-home fa-fw'></i>首页</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/categories/"><i class='fa fa-list fa-fw'></i>分类</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/"><i class='fa fa-user fa-fw'></i>标签</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  
+
+  
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>awk的使用</h1>
+  <h2>awk的使用</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Sep 2019, 11:18</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/awk">awk</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gittags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <h1 id="awk的使用">awk的使用</h1>
+<h2 id="解决的问题">解决的问题</h2>
+<blockquote>
+<ol>
+<li>文本文件的统计；</li>
+<li>日志文件的统计；</li>
+</ol>
+</blockquote>
+<h2 id="语法">语法</h2>
+<p>awk 命令的基本格式</p>
+<pre tabindex="0"><code>awk [options] &#39;script&#39; file
+</code></pre><p><code>options</code> 这个表示一些可选的参数选项，<code>script</code> 表示 awk 的可执行脚本代码（一般被<code>{}</code> 花括号包围），这个是必须的。<code>file</code> 这个表示 awk 需要处理的文件，注意需要是纯文本文件（意味着 awk 能够处理）。</p>
+<h2 id="awk-自定义分隔符">awk 自定义分隔符</h2>
+<p>之前提到的，awk 默认的分割符为<strong>空格和制表符</strong>，awk 会根据这个默认的分隔符将每一行分为若干字段，依次用 <code>$1</code>, <code>$2</code>,<code>$3</code> 来表示，可以使用 <code>-F</code> 参数来指定分隔符</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk -F <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39;{print $1}&#39;</span> /etc/passwd
+</span></span></code></pre></div><p>解释：使用 <code>-F</code> 来改变分隔符为 <code>:</code> ，比如上面的命令将 /etc/passwd 文件中的每一行用冒号 <code>:</code> 分割成多个字段，然后用 print 将第 1 列字段的内容打印输出</p>
+<p>在 awk 中同时指定多个分隔符，比如现在有这样一个文件 some.log 文件内容如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Grape(100g)1980
+</span></span><span style="display:flex;"><span>raisins(500g)1990
+</span></span><span style="display:flex;"><span>plum(240g)1997
+</span></span><span style="display:flex;"><span>apricot(180g)2005
+</span></span><span style="display:flex;"><span>nectarine(200g)2008
+</span></span></code></pre></div><p>现在我们想将上面的 some.log 文件中按照 “水果名称（重量）年份” 来进行分割</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ awk -F <span style="color:#e6db74">&#39;[()]&#39;</span> <span style="color:#e6db74">&#39;{print $1, $2, $3}&#39;</span> some.log
+</span></span><span style="display:flex;"><span>Grape 100g <span style="color:#ae81ff">1980</span>
+</span></span><span style="display:flex;"><span>raisins 500g <span style="color:#ae81ff">1990</span>
+</span></span><span style="display:flex;"><span>plum 240g <span style="color:#ae81ff">1997</span>
+</span></span><span style="display:flex;"><span>apricot 180g <span style="color:#ae81ff">2005</span>
+</span></span><span style="display:flex;"><span>nectarine 200g <span style="color:#ae81ff">2008</span>
+</span></span></code></pre></div><p>在 <code>-F</code> 参数中使用一对方括号来指定多个分隔符，awk 处理 some.log 文件时就会使用 “(“ 或者 “)” 来对文件的每一行进行分割。</p>
+<h3 id="awk-内置变量的使用">awk 内置变量的使用</h3>
+<p>awk 除了 <code>$</code> 和数字表示字段还有一些其他的内置变量：</p>
+<ul>
+<li>0这个表示文本处理时的当前行，1 表示文本行被分隔后的第 1 个字段列，2表示文本行被分割后的第2个字段列，3 表示文本行被分割后的第 3 个字段列，$n 表示文本行被分割后的第 n 个字段列</li>
+<li>NR 表示文件中的行号，表示当前是第几行</li>
+<li>NF 表示文件中的当前行被分割的列数，可以理解为 MySQL 数据表里面每一条记录有多少个字段，所以 NF就表示最后一个字段，(NF-1) 就表示倒数第二个字段</li>
+<li>FS 表示 awk 的输入分隔符，默认分隔符为空格和制表符，可以对其进行自定义设置</li>
+<li>OFS 表示 awk 的输出分隔符，默认为空格，也可以对其进行自定义设置</li>
+<li>FILENAME 表示当前文件的文件名称，如果同时处理多个文件，它也表示当前文件名称</li>
+<li>RS 行分隔符，用于分割行，默认为换行符</li>
+<li>ORS 输出记录的分隔符，默认为换行符</li>
+</ul>
+<p>比如我们有这么一个文本文件 fruit.txt 内容如下，用它来演示如何使用 awk 命令工具</p>
+<pre tabindex="0"><code>peach    100   Mar  1997   China
+Lemon    150   Jan  1986   America
+Pear     240   Mar  1990   Janpan
+avocado  120   Feb  2008   china
+
+awk &#39;{print $0}&#39; fruit.txt   # 表示打印输出文件的每一整行的内容
+awk &#39;{print $1}&#39; fruit.txt   # 表示打印输出文件的每一行的第 1 列内容
+awk &#39;{print $1, $2}&#39; fruit.txt
+</code></pre><p>文件的每一行的每一列的内容除了可以用 print 命令打印输出以外，还可以对其进行赋值</p>
+<pre tabindex="0"><code>awk &#39;{$2 = &#34;***&#34;; print $0}&#39; fruit.txt
+</code></pre><p>上面的例子就是表示通过对 <code>$2</code> 变量进行重新赋值，来隐藏每一行的第 2 列内容，并且用星号 <code>*</code> 来代替其输出</p>
+<p>在参数列表中加入一些字符串或者转义字符之类的东东</p>
+<pre tabindex="0"><code>awk &#39;{print $1 &#34;\t&#34; $2 &#34;\t&#34; $3}&#39; fruit.txt
+</code></pre><p>像上面这样，你可以在 print 的参数列表中加入一些字符串或者转义字符之类的东东，让输出的内容格式更漂亮，但一定要记住要使用双引号。</p>
+<p>awk 内置 NR 变量表示每一行的行号</p>
+<pre tabindex="0"><code>awk &#39;{print NR &#34;\t&#34; $0}&#39; fruit.txt
+
+1   peach    100   Mar  1997   China
+2   Lemon    150   Jan  1986   America
+3   Pear     240   Mar  1990   Janpan
+4   avocado  120   Feb  2008   china
+</code></pre><p>awk 内置 NF 变量表示每一行的列数</p>
+<pre tabindex="0"><code>awk &#39;{print NF &#34;\t&#34; $0}&#39; fruit.txt
+
+5   peach    100   Mar  1997   China
+5   Lemon    150   Jan  1986   America
+5   Pear     240   Mar  1990   Janpan
+5   avocado  120   Feb  2008   china
+</code></pre><p>awk 中 $NF 变量的使用</p>
+<pre tabindex="0"><code>awk &#39;{print $NF}&#39; fruit.txt
+</code></pre><p>上面这个 <code>$NF</code> 就表示每一行的最后一列，因为 NF 表示一行的总列数，在这个文件里表示有 5 列，然后在其前面加上 <code>$</code> 符号，就变成了 <code>$5</code> ，表示第 5 列</p>
+<pre tabindex="0"><code>awk &#39;{print $(NF - 1)}&#39; fruit.txt
+
+1997
+1986
+1990
+2008
+</code></pre><p>上面 (NF−1)表示倒数第2列，(NF-2) 表示倒数第 3 列，依次类推。</p>
+<pre tabindex="0"><code>awk &#39;NR % 6&#39;        # 打印出了 6 倍数行之外的其他行
+awk &#39;NR &gt; 5&#39;        # 打印第 5 行之后内容，类似 `tail -n +6` 或者 `sed &#39;1,5d&#39;`
+awk &#39;NF &gt;= 6&#39;       # 打印大于等于 6 列的行
+awk &#39;/foo/ &amp;&amp; /bar/&#39;    # 打印匹配 `/foo/` 和 `/bar/` 的行
+awk &#39;/foo/ &amp;&amp; !/bar/&#39;   # 打印包含 `/foo/` 不包含 `/bar/` 的行
+awk &#39;/foo/ || /bar/&#39;    # 或
+awk &#39;/foo/,/bar/&#39;       # 打印从匹配 `/foo/` 开始的行到 `/bar/` 的行，包含这两行
+</code></pre><h2 id="awk-内置函数">awk 内置函数</h2>
+<p>awk 还提供了一些内置函数，比如</p>
+<ul>
+<li><code>toupper()</code> 用于将字符转为大写</li>
+<li><code>tolower()</code> 将字符转为小写</li>
+<li><code>length()</code> 长度</li>
+<li><code>substr()</code> 子字符串</li>
+<li><code>sin()</code> 正弦</li>
+<li><code>cos()</code> 余弦</li>
+<li><code>sqrt()</code> 平方根</li>
+<li><code>rand()</code> 随机数</li>
+</ul>
+<p>更多的方法可以参考 <code>man awk</code></p>
+<h2 id="awk-同时处理多个文件">awk 同时处理多个文件</h2>
+<pre tabindex="0"><code>awk &#39;{print FILENAME &#34;\t&#34; $0}&#39; demo1.txt demo2.txt
+</code></pre><p>当你使用 awk 同时处理多个文件的时候，它会将多个文件合并处理，变量 FILENAME 就表示当前文本行所在的文件名称。</p>
+<h2 id="begin-关键字的使用">BEGIN 关键字的使用</h2>
+<p>在脚本代码段前面使用 BEGIN 关键字时，它会在开始读取一个文件之前，运行一次 BEGIN 关键字后面的脚本代码段， BEGIN 后面的脚本代码段只会执行一次，执行完之后 awk 程序就会退出</p>
+<pre tabindex="0"><code>awk &#39;BEGIN {print &#34;Start read file&#34;}&#39; /etc/passwd
+</code></pre><p>awk 脚本中可以用多个花括号来执行多个脚本代码，就像下面这样</p>
+<pre tabindex="0"><code>awk &#39;BEGIN {print &#34;Start read file&#34;} {print $0}&#39; /etc/passwd
+</code></pre><h2 id="end-关键字使用方法">END 关键字使用方法</h2>
+<p>awk 的 END 指令和 BEGIN 恰好相反，在 awk 读取并且处理完文件的所有内容行之后，才会执行 END 后面的脚本代码段</p>
+<pre tabindex="0"><code>awk &#39;END {print &#34;End file&#34;}&#39; /etc/passwd
+awk &#39;BEGIN {print &#34;Start read file&#34;} {print $0} END {print &#34;End file&#34;}&#39; /etc/passwd
+</code></pre><h2 id="在-awk-中使用变量">在 awk 中使用变量</h2>
+<p>可以在 awk 脚本中声明和使用变量</p>
+<pre tabindex="0"><code>awk &#39;{msg=&#34;hello world&#34;; print msg}&#39; /etc/passwd
+</code></pre><p>awk 声明的变量可以在任何多个花括号脚本中使用</p>
+<pre tabindex="0"><code>awk &#39;BEGIN {msg=&#34;hello world&#34;} {print msg}&#39; /etc/passwd
+</code></pre><p>在 awk 中使用数学运算，在 awk 中，像其他编程语言一样，它也支持一些基本的数学运算操作</p>
+<pre tabindex="0"><code>awk &#39;{a = 12; b = 24; print a + b}&#39; company.txt
+</code></pre><p>上面这段脚本表示，先声明两个变量 a = 12 和 b = 24，然后用 print 打印出 a 加上 b 的结果。</p>
+<p>请记住 awk 是针对文件的每一行来执行一次单引号 里面的脚本代码，每读取到一行就会执行一次，文件里面有多少行就会执行多少次，但 BEGIN 和 END 关键字后脚本代码除外，如果被处理的文件中什么都没有，那 awk 就一次都不会执行。</p>
+<p>awk 还支持其他的数学运算符</p>
+<pre tabindex="0"><code>+ 加法运算符
+- 减法运算符
+* 乘法运算符
+/ 除法运算符
+% 取余运算符
+</code></pre><p>在 awk 中使用条件判断</p>
+<p>比如有一个文件 company.txt 内容如下</p>
+<pre tabindex="0"><code>yahoo   100 4500
+google  150 7500
+apple   180 8000
+twitter 120 5000
+</code></pre><p>如果要判断文件的第 3 列数据，也就是平均工资小于 5500 的公司，然后将其打印输出</p>
+<pre tabindex="0"><code>awk &#39;$3 &lt; 5500 {print $0}&#39; company.txt
+</code></pre><p>上面的命令结果就是平均工资小于 5500 的公司名单，<code>$3 &lt; 5500</code> 表示当第 3 列字段的内容小于 5500 的时候才会执行后面的 {print $0} 代码块</p>
+<pre tabindex="0"><code>awk &#39;$1 == &#34;yahoo&#34; {print $0}&#39; company.txt
+</code></pre><p>awk 还有一些其他的条件操作符如下</p>
+<pre tabindex="0"><code>&lt; 小于
+&lt;= 小于或等于
+== 等于
+!= 不等于
+&gt; 大于
+&gt;= 大于或等于
+~ 匹配正则表达式
+!~ 不匹配正则表达式
+</code></pre><p>使用 if 指令判断来实现上面同样的效果</p>
+<pre tabindex="0"><code>awk &#39;{if ($3 &lt; 5500) print $0}&#39; company.txt
+</code></pre><p>上面表示如果第 3 列字段小于 5500 的时候就会执行后面的 print $0</p>
+<h2 id="在-awk-中使用正则表达式">在 awk 中使用正则表达式</h2>
+<p>比如现在我们有这么一个文件 poetry.txt 内容如下：</p>
+<pre tabindex="0"><code>This above all: to thine self be true
+There is nothing either good or bad, but thinking makes it so
+There’s a special providence in the fall of a sparrow
+No matter how dark long, may eventually in the day arrival
+</code></pre><p>使用正则表达式匹配字符串 “There” ，将包含这个字符串的行打印并输出</p>
+<pre tabindex="0"><code>awk &#39;/There/{print $0}&#39; poetry.txt
+
+There is nothing either good or bad, but thinking makes it so
+There’s a special providence in the fall of a sparrow
+</code></pre><p>使用正则表达式配一个包含字母 t 和字母 e ，并且 t 和 e 中间只能有任意单个字符的行</p>
+<pre tabindex="0"><code>awk &#39;/t.e/{print $0}&#39; poetry.txt
+
+There is nothing either good or bad, but thinking makes it so
+There’s a special providence in the fall of a sparrow
+No matter how dark long, may eventually in the day arrival
+</code></pre><p>如果只想匹配单纯的字符串 “t.e”， 那正则表达式就是这样的 /t.e/ ，用反斜杠来转义 . 符号 因为 . 在正则表达式里面表示任意单个字符。</p>
+<p>使用正则表达式来匹配所有以 “The” 字符串开头的行</p>
+<pre tabindex="0"><code>awk &#39;/^The/{print $0}&#39; poetry.txt
+</code></pre><p>在正则表达式中 ^ 表示以某某字符或者字符串开头。</p>
+<p>使用正则表达式来匹配所有以 “true” 字符串结尾的行</p>
+<pre tabindex="0"><code>awk &#39;/true$/{print $0}&#39; poetry.txt
+</code></pre><p>在正则表达式中 $ 表示以某某字符或者字符串结尾。</p>
+<pre tabindex="0"><code>awk &#39;/m[a]t/{print $0}&#39; poetry.txt
+
+No matter how dark long, may eventually in the day arrival
+</code></pre><p>上面这个正则表达式 <code>/m[a]t/</code> 表示匹配包含字符 m ，然后接着后面包含中间方括号中表示的单个字符 a ，最后包含字符 t 的行，输出结果中只有单词 “matter” 符合这个正则表达式的匹配。因为正则表达式 [a] 方括号中表示匹配里面的任意单个字符。</p>
+<p>继续上面的一个新例子如下</p>
+<pre tabindex="0"><code>awk &#39;/^Th[ie]/{print $0}&#39; poetry.txt
+</code></pre><p>这个例子中的正则表达式 /^Th[ie]/ 表示匹配以字符串 “Thi” 或者 “The” 开头的行，正则表达式方括号中表示匹配其中的任意单个字符。</p>
+<p>再继续上面的新的用法</p>
+<pre tabindex="0"><code>awk &#39;/s[a-z]/{print $0}&#39; poetry.txt
+</code></pre><p>正则表达式 <code>/s[a-z]/</code> 表示匹配包含字符 s 然后后面跟着任意 a 到 z 之间的单个字符的字符串，比如 “se”, “so”, “sp” 等等。</p>
+<p>正则表达式 [] 方括号中还有一些其他用法比如下面这些</p>
+<pre tabindex="0"><code>[a-zA-Z]  表示匹配小写的 a 到 z 之间的单个字符，或者大写的 A 到 Z 之间的单个字符
+[^a-z]    符号 `^` 在方括号里面表示取反，也就是非的意思，表示匹配任何非 a 到 z 之间的单个字符
+</code></pre><p>正则表达式中的星号 <code>*</code> 和加号 <code>+</code> 的使用方法，<code>*</code> 表示匹配星号前字符串 0 次或者多次，<code>+</code> 和星号原理差不多，只是加号表示任意 1 个或者 1 个以上，也就是必须至少要出现一次。</p>
+<p>正则表达式问号 ? 的使用方法，正则中的问号 <code>?</code> 表示它前面的字符只能出现 0 次 或者 1 次。</p>
+<p>正则表达式中的 {} 花括号用法，花括号 {} 表示规定它前面的字符必须出现的次数，像这个 /go{2}d/ 就表示只匹配字符串 “good”，也就是中间的字母 “o” 必须要出现 2 次。</p>
+<p>正则表达式中的花括号还有一些其他的用法如下</p>
+<pre tabindex="0"><code>/go{2,10}d/   表示字母 &#34;o&#34; 只能可以出现 2 次，3 次，4 次，5 次，6 次 ... 一直到 10 次
+/go{2,}d/     表示字母 &#34;o&#34; 必须至少出现 2 次或着 2 次以上
+</code></pre><p>正则表达式中的圆括号表示将多个字符当成一个完整的对象来看待。比如 /th(in){1}king/ 就表示其中字符串 “in” 必须出现 1 次。而如果不加圆括号就变成了 /thin{1}king/ 这个就表示其中字符 “n” 必须出现 1 次。</p>
+<h2 id="使用-awk-移除行中特定模式">使用 AWK 移除行中特定模式</h2>
+<p>接上面正则使用，比如文件中有行数据</p>
+<pre tabindex="0"><code>/abc/def/123 456
+/abc/def/222 456
+</code></pre><p>想要移除 123，保留之前的字母和后面的数字，则可以使用</p>
+<pre tabindex="0"><code>awk &#39;sub(/[0-9]+/,&#34;&#34;,$1)&#39; /path/to/file
+</code></pre><h2 id="一些组合使用">一些组合使用</h2>
+<p>使用 awk 过滤 history 输出，找到最常用的命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>history | awk <span style="color:#e6db74">&#39;{a[$2]++}END{for(i in a){print a[i] &#34; &#34; i}}&#39;</span> | sort -rn | head
+</span></span></code></pre></div><p>过滤文件中重复行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk <span style="color:#e6db74">&#39;!x[$0]++&#39;</span> &lt;file&gt;
+</span></span></code></pre></div><p>将一行长度超过 72 字符的行打印</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk <span style="color:#e6db74">&#39;length&gt;72&#39;</span> file
+</span></span></code></pre></div><p>查看最近哪些用户使用系统</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>last | grep -v <span style="color:#e6db74">&#34;^</span>$<span style="color:#e6db74">&#34;</span> | awk <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> | sort -nr | uniq -c
+</span></span></code></pre></div><p>假设有一个文本，每一行都是一个 int 数值，想要计算这个文件每一行的和，可以使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>awk <span style="color:#e6db74">&#39;{s+=$1} ENG {printf &#34;%.0f&#34;, s}&#39;</span> /path/to/file
+</span></span></code></pre></div>
+  
+  
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class=" prev ">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/cpu/">CPU占用高问题的排查</a>
+    </nav>
+    
+  </div>
+  
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/"></a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/command-proxy/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/ui.js"></script>
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.gitjs/menus.js"></script>
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=Your%20Google%20Analytics%20tracking%20ID"></script>
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'Your Google Analytics tracking ID');
+  }
+</script>
+
+
+
+
+
+
+<script src="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/js/math-code.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+

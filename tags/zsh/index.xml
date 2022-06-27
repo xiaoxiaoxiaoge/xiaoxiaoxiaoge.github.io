@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on Hddata</title>
+    <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/zsh/</link>
+    <description>Recent content in zsh on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Sep 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>终极 Shell----zsh</title>
+      <link>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</link>
+      <pubDate>Sun, 08 Sep 2019 11:18:15 +0800</pubDate>
+      
+      <guid>https://github.com/xiaoxiaoxiaoge/xiaoxiaoxiaoge.github.io.git/post/zsh/</guid>
+      <description>终极 Shell&amp;mdash;-zsh 解决的问题 色彩高亮； 命令提示； 智能补全； 智能跳转； zsh介绍与安装 Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。
+Linux/Unix提供了很多种Shell，为毛要这么多Shell？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：
+cat /etc/shells 显示如下：
+# List of acceptable shells for chpass(1). # Ftpd will not allow users to connect who are not using # one of these shells. /bin/bash /bin/csh /bin/ksh /bin/sh /bin/tcsh /bin/zsh zsh的功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash， 于是他创建了一个名为oh-my-zsh的开源项目，自此，只需要简单的安装配置，小白程序员们都可以用上高档大气上档次，狂拽炫酷吊炸天的oh my zsh。
+安装 参考文档-https://github.com/robbyrussell/oh-my-zsh
+插件配置 编辑用户目录下的.zshrc文件
+plugins=(adb autojump brew docker extract git go golang helm history httpie kubectl man node npm osx pip sublime svn z zsh-syntax-highlighting zsh-autosuggestions) 使用说明 色彩高亮 成功的命令是绿色； 错误的命令是红色； 会提示上一个命令是否执行成功； 命令提示 输入命令后，按两次tab可以查看命令支持的所有参数；</description>
+    </item>
+    
+  </channel>
+</rss>
