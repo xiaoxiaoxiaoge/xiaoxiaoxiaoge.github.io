@@ -14,8 +14,8 @@
       <pubDate>Fri, 06 Sep 2019 11:18:15 +0800</pubDate>
       
       <guid>https://xiaoxiaoxiaoge.github.io/post/load/</guid>
-      <description>理解系统负载 解决的问题 理解什么是load； 理解load值是多少合适； You might be familiar with Linux load averages already. Load averages are the three numbers shown with the uptime and top commands - they look like this:
-load average: 0.09, 0.05, 0.01 Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better. Higher numbers represent a problem or an overloaded machine.</description>
+      <description>理解系统负载 解决的问题   理解什么是load； 理解load值是多少合适；   You might be familiar with Linux load averages already. Load averages are the three numbers shown with the uptime and top commands - they look like this:
+load average: 0.09, 0.05, 0.01 Most people have an inkling of what the load averages mean: the three numbers represent averages over progressively longer periods of time (one, five, and fifteen minute averages), and that lower numbers are better.</description>
     </item>
     
   </channel>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on Hddata</title>
+    <link>https://xiaoxiaoxiaoge.github.io/tags/markdown/</link>
+    <description>Recent content in markdown on Hddata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jun 2022 09:11:14 +0800</lastBuildDate><atom:link href="https://xiaoxiaoxiaoge.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MarkDown语法</title>
+      <link>https://xiaoxiaoxiaoge.github.io/post/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 28 Jun 2022 09:11:14 +0800</pubDate>
+      
+      <guid>https://xiaoxiaoxiaoge.github.io/post/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>标题1 标题2 标题3 标题4 标题5 标题6 标题等级1 标题等级2 这是MarkDown段落演示
+这是MarkDown段落演示
+这里是MarkDown第一行 这里是MarkDown第二行
+这是粗体 或者这个粗体
+这是斜体
+又粗又斜
+又粗又斜
+又粗又斜
+块引用</description>
+    </item>
+    
+  </channel>
+</rss>
